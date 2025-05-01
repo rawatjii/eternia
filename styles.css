@@ -90,14 +90,13 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px 0;
+    padding: 50px 0;
     box-shadow: 2px 0 4px rgba(0,0,0,.1);
     font-family: var(--font-primary);
 
     .sidebar-logo {
-        width: 100%;
+        width: 80px;
         height: auto;
-        margin-right: 30px;
     }
 
     .center {
@@ -345,12 +344,23 @@ html, body {
         display: none;
     }
 
+    .hero-multi-flowers {
+        z-index: 1;
+        position: absolute;
+        right: 0;
+        bottom: -40px;
+        /* width: 100%; */
+        height: auto;
+        z-index: 3;
+    }
+
     .hero-content {
         position: relative;
         text-align: center;
         color: #000000;
         text-shadow: none;
         z-index: 2;
+        margin: 0 50px;
 
         .hero-title-image {
             /* width: 400px; */
@@ -367,6 +377,9 @@ html, body {
             letter-spacing: 2px;
             position:relative;
             margin-bottom: 12px;
+            display: table;
+            margin-left: auto;
+            margin-right: auto;
 
             &:before{
                 position:absolute;
@@ -1624,6 +1637,75 @@ textarea.form-control {
 }
 
 /* Responsive Styles - Combined at bottom */
+
+@media (max-width: 1500px) {
+
+    .sidebar{
+
+        padding: 20px 0;
+    }
+
+    .header{
+
+        ._logo{
+            padding-left: 40px;
+            padding-top: 30px;
+
+            .header-logo{
+                height: 50px;
+            }
+        }
+    }
+
+    .hero-section {
+        
+        .hero-content{
+
+            .hero-title-image{
+                width: 200px;
+            }
+
+            .tagline{
+                font-size: 20px;
+                letter-spacing: 1px;
+            }
+
+            .sub_tagline{
+                font-size: 14px;
+                margin-bottom: 50px;
+            }
+
+            .hero-description{
+
+                .sizes{
+                    font-size: 22px;
+                }
+
+                .patch{
+                    margin-bottom: 50px;
+
+                    p{
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            .hero-address{
+                font-size: 16px;
+                letter-spacing: 1px;
+            }
+        }
+
+        .hero-multi-flowers{
+            max-width: 110%;
+            bottom: -30px;
+        }
+    }
+
+}
+
+/* end of 1500 */
+
 @media (max-width: 1200px) {
     .overview-content {
         padding: 0 20px;
@@ -2751,10 +2833,6 @@ textarea.form-control {
 @media (max-height: 700px) {
     .hero-content {
         gap: 20px;
-    }
-
-    .hero-title-image {
-        width: 250px;
     }
 }
 

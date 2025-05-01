@@ -102,8 +102,7 @@
                 <img src="assets/images/hero/left.png" alt="Hero Left Image" class="hero-left-image">
               </div>
               <div class="col-lg-6 hero-right-col">
-                <div class="hero-overlay"></div>
-                <img src="assets/images/flower_light.png" alt="Flower" class="hero-flower">
+                <img src="assets/images/hero/multi_flowers.png" alt="Flowers" class="hero-multi-flowers">
                 <div class="hero-content">
                   <img src="assets/images/hero/eternia_dark.png" alt="Eternia" class="hero-title-image">
                   <h1 class="tagline">One Address That Has It All</h1>
@@ -892,6 +891,14 @@
       delay: 1
     });
 
+    gsap.from(".hero-multi-flowers", {
+      duration: 1.5,
+      opacity: 0,
+      y: 30,
+      ease: "power2.out",
+      delay: 2
+    });
+
     gsap.from(".hero-title-image", {
       duration: 1,
       opacity: 0,
@@ -928,7 +935,7 @@
     ScrollTrigger.create({
       trigger: ".highlights-section",
       start: "top 80%",
-      markers: true, // Visual markers for debugging
+      markers: false, // Visual markers for debugging
       once: true,
       onEnter: function () {
         console.log("Highlights section entered viewport");
