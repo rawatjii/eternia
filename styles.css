@@ -2457,7 +2457,7 @@ textarea.form-control {
 
     /* Price list styles */
     .price-list-section {
-        padding: 80px 0;
+        padding: 60px 0;
 
         .price-list-subtitle{
             font-size: 12px;
@@ -2515,45 +2515,75 @@ textarea.form-control {
 
     /* Amenities styles */
     .amenities-section {
-        padding: 80px 0;
-    }
+        padding: 60px 0;
 
-    .amenities-title {
-        font-size: 22px;
-        letter-spacing: 3px;
-    }
+        .amenities-title {
+            font-size: 20px;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+            max-width: 100%;
+            margin-top: 25px;
+            line-height: inherit;
+        }
 
-    .amenities-table tr {
-        margin-bottom: 10px;
-    }
+        .amenities-subtitle{
+            font-size: 12px;
+            letter-spacing: 8px;
+        }
     
-    .amenities-table .icon-cell {
-        padding: 10px;
-        width: 50px;
-    }
+        .amenities-table tr {
+            margin-bottom: 10px;
+        }
+        
+        .amenities-table .icon-cell {
+            padding: 10px;
+            width: 50px;
+        }
+        
+        .amenities-table .text-cell {
+            font-size: 14px;
+            padding: 10px 15px;
+        }
+        
+        .amenities-table .icon-cell img {
+            width: 34px;
+        }
+
+        .swiper-slide{
+            height: 280px;
+        }
+
+        .slide-content {
+            bottom: 30px;
+            left: 30px;
+            right: 30px;
+        }
     
-    .amenities-table .text-cell {
-        font-size: 14px;
-        padding: 10px 15px;
-    }
+        .slide-title {
+            font-size: 18px;
+        }
     
-    .amenities-table .icon-cell img {
-        width: 34px;
+        .slide-subtitle {
+            font-size: 12px;
+            max-width: 100%;
+        }
+
+        .swiper-button-prev, .swiper-button-next{
+            margin:0 10px;
+            width: 30px;
+            height: 30px;
+        }
+
+        .swiper-button-prev{
+            left: 0;
+        }
+        
+        
     }
 
-    .slide-content {
-        bottom: 30px;
-        left: 30px;
-        right: 30px;
-    }
+    
 
-    .slide-title {
-        font-size: 22px;
-    }
-
-    .slide-subtitle {
-        font-size: 20px;
-    }
+    
 
     /* Location styles */
     .location-section {
@@ -2813,27 +2843,6 @@ textarea.form-control {
     }
 
 
-    /* Price list styles */
-    .price-list-section {
-        padding: 60px 0;
-    }
-
-    .price-list-title {
-        font-size: 20px;
-        letter-spacing: 2px;
-    }
-
-    .price-type,
-    .price-area,
-    .price-amount {
-        font-size: 20px;
-        margin-bottom: 20px;
-    }
-
-    .price-btn {
-        padding: 10px 25px;
-        font-size: 14px;
-    }
 
     /* Modal styles */
     .modal-content {
@@ -2872,21 +2881,6 @@ textarea.form-control {
         padding: 10px 20px;
     }
 
-    /* Amenities styles */
-    .amenities-section {
-        padding: 60px 0;
-    }
-
-    .amenities-title {
-        font-size: 20px!important;
-        letter-spacing: 2px!important;
-        line-height: normal!important;
-        margin-bottom: 30px!important;
-    }
-
-    .swiper-slide {
-        height: 300px;
-    }
 
     .slide-content {
         bottom: 20px;
@@ -3093,31 +3087,7 @@ textarea.form-control {
         }
     }
 
-    /* Amenities styles */
-    .amenities-section {
-        padding: 60px 0;
-    }
-
-    .amenities-title {
-        font-size: 20px;
-        letter-spacing: 2px;
-        margin-bottom: 30px;
-    }
     
-    .amenities-table .icon-cell {
-        padding: 8px;
-        width: 40px;
-    }
-    
-    .amenities-table .text-cell {
-        font-size: 13px;
-        padding: 8px 10px;
-        letter-spacing: 0;
-    }
-    
-    .amenities-table .icon-cell img {
-        width: 22px;
-    }
 }
 
 @media (max-width: 375px) {
