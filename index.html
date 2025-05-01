@@ -341,8 +341,8 @@
                 </div>
               </div>
               <div class="col-lg-6 px_40">
-                <div class="amenities-table">
-                  <table>
+                <div class="amenities-table table-responsive">
+                  <table class="table-res">
                     
                     <tr class="amenity-row" data-amenity="games">
                       <td class="icon-cell">
@@ -1250,6 +1250,7 @@
       const planSwiper = new Swiper('.planSwiper', {
         slidesPerView: 3,
         centeredSlides: true,
+        spaceBetween:2,
         loop: true,
         initialSlide: 1,
         navigation: {
@@ -1291,7 +1292,7 @@
         },
         breakpoints: {
           320: {
-            slidesPerView: 3,
+            slidesPerView: 2.4,
             centeredSlides: true,
           },
           576: {

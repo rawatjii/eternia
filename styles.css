@@ -2208,6 +2208,20 @@ textarea.form-control {
 /* end of 991 */
 
 @media (max-width: 768px) {
+    .overview-section {
+        .overview-content {
+            padding: 0;
+        }
+    }
+    .amenities-section {
+        .slide-subtitle {
+            max-width: 100%;
+        }
+    }
+    .amenities-section {
+        .amenities-title {max-width: 100%;}
+    }
+    .px_lg_40{padding:  0 15px;}
     /* Header styles */
     .header {
         position:relative;
@@ -2864,9 +2878,10 @@ textarea.form-control {
     }
 
     .amenities-title {
-        font-size: 20px;
-        letter-spacing: 2px;
-        margin-bottom: 30px;
+        font-size: 20px!important;
+        letter-spacing: 2px!important;
+        line-height: normal!important;
+        margin-bottom: 30px!important;
     }
 
     .swiper-slide {
@@ -3563,9 +3578,14 @@ textarea.form-control {
         font-size: 16px;
         padding: 15px 20px;
     }
+    .disclaimer-para{
+       max-width: 100%;
+    }
 }
 
 @media (max-width: 768px) {
+    .footer-title{padding: 0;}
+    .px_60{padding: 0 15px;}
     .amenities-table tr {
         margin-bottom: 10px;
     }
