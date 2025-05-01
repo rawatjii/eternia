@@ -777,6 +777,10 @@ html, body {
         text-align: center;
         position: relative;
         z-index: 2;
+        max-width: 40%;
+        line-height: 50px;
+        margin-left: auto;
+        margin-right: auto;
         opacity: 0; /* Start hidden for animation */
         transform: translateY(30px); /* Start position for animation */
         will-change: transform, opacity; /* Performance optimization for animations */
@@ -850,8 +854,8 @@ html, body {
     position: relative;
     padding: 100px 0;
     overflow: hidden;
-}
 
+    
 .price-list-bg {
     position: absolute;
     top: 0;
@@ -909,6 +913,10 @@ html, body {
     text-align: center;
     position: relative;
     z-index: 3;
+    max-width: 40%;
+    line-height: 50px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .price-box {
@@ -970,6 +978,8 @@ html, body {
     background-color: rgb(235 225 213);
     color: rgb(0 0 0);
 }
+}
+
 
 /* Contact Us Section */
 .contact-us-section {
@@ -1641,7 +1651,6 @@ textarea.form-control {
 @media (max-width: 1500px) {
 
     .sidebar{
-
         padding: 20px 0;
     }
 
@@ -1702,11 +1711,86 @@ textarea.form-control {
         }
     }
 
+    /* overview section */
+
+    .overview-section{
+
+        .overview-content{
+
+            .overview-counters{
+
+                .counter-item{
+
+                    .counter{
+                        font-size: 40px;
+                    }
+                }
+            }
+                
+        }
+    }
+
+    /* end of overview section */
+
+    /* highlights section */
+
+    .highlights-section{
+
+
+        .highlights-title{
+            max-width: 60%;
+        }
+
+        .highlights-table{
+
+            .icon-cell{
+
+                padding: 10px 15px;
+
+                img{
+                    width: 30px;
+                }
+
+
+            }
+
+            .text-cell{
+
+                padding: 10px 15px;
+                font-size: 16px;
+            }
+        }
+
+    }
+
+    /* end of highlights section */
+
+    /* price list section */
+
+    .price-list-section{
+
+        .price-list-title{
+            margin-bottom: 80px;
+        }
+        
+    }
+
+    /* end of price list section */
 }
 
 /* end of 1500 */
 
 @media (max-width: 1200px) {
+
+    .mx_lg_-40{
+        margin-left: -40px;
+        margin-right: -40px;
+    }
+
+    .px_lg_40{
+        padding-left: 40px;
+        padding-right: 40px;
+    }
 
     .sidebar{
         width: 80px;
@@ -1827,17 +1911,25 @@ textarea.form-control {
 
     /* end of hero-section */
 
-    .overview-content {
-        padding: 0 20px;
-    }
+    /* overview section */
+    
+    .overview-section{
 
-    .overview-description {
-        font-size: 15px;
-    }
+        .overview-content{
 
-    .counter {
-        font-size: 42px;
+            .overview-counters{
+
+                .counter-item{
+
+                    .counter-label{
+                        font-size: 12px;
+                    }
+                }
+            }
+                
+        }
     }
+    /* end of overview section */
 
     .highlights-section {
         padding: 100px 0;
@@ -1845,11 +1937,46 @@ textarea.form-control {
         .container-fluid {
             padding: 0 30px;
         }
+
+        .highlights-title{
+            margin-bottom: 60px;
+        }
     }
 
-    .container {
-        padding: 0 30px;
+    /* end of highlights section */
+
+    /* price list section */
+
+    .price-list-section{
+
+        .price-list-title{
+            max-width: 60%;
+            margin-bottom: 60px;
+        }
+
+        .price-type{
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .price-area{
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .price-amount{
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .price-btn{
+            padding: 10px 30px;
+            font-size: 12px;
+        }
+            
     }
+
+    /* end of price list section */
 }
 
 /* end of 1200 */
@@ -1932,11 +2059,12 @@ textarea.form-control {
             font-size: 24px;
             letter-spacing: 4px;
             margin-bottom: 40px;
+            max-width: 80%;
+            line-height: 40px;
         }
 
         .highlights-image {
             margin-bottom: 40px;
-            max-width: 80%;
             margin-left: auto;
             margin-right: auto;
             display: block;
@@ -2203,27 +2331,62 @@ textarea.form-control {
         padding: 60px 0;
 
         .overview-content {
+
+            .overview-subtitle{
+                font-size: 12px;
+                letter-spacing: 8px;
+            }
             .overview-title {
                 font-size: 20px;
                 letter-spacing: 3px;
                 margin-bottom: 30px;
+                margin-top: 25px;
             }
 
             .overview-description {
                 font-size: 14px;
                 margin-bottom: 40px;
             }
+
+            
+
+        .overview-counters{
+            gap:0;
+            justify-content: unset;
+            margin-top: 40px;
+
+            .counter-item{
+                flex: 0 0 50%;
+                margin:15px 0;
+
+                .counter{
+                    font-size: 26px;
+                }
+
+                .counter-label{
+                    font-size: 12px;
+                }
+            }
+        }
         }
     }
 
     /* Highlights styles */
     .highlights-section {
-        padding: 80px 0;
+        padding: 60px 0;
+
+        .highlights-subtitle{
+            font-size: 12px;
+            letter-spacing: 8px;
+        }
 
         .highlights-title {
-            font-size: 22px;
+            font-size: 20px;
             letter-spacing: 3px;
             margin-bottom: 30px;
+            max-width: 100%;
+            margin-top:25px;
+            line-height: inherit;
         }
 
         .highlights-image {
@@ -2232,13 +2395,13 @@ textarea.form-control {
 
         .highlights-table {
             .text-cell {
-                font-size: 15px;
-                padding: 20px 15px;
+                font-size: 14px;
+                padding: 10px 15px;
             }
 
             .icon-cell {
-                width: 50px;
-                padding: 20px 10px;
+                width: 55px;
+                padding: 10px 15px;
 
                 img {
                     width: 25px;
@@ -2250,24 +2413,29 @@ textarea.form-control {
     /* Price list styles */
     .price-list-section {
         padding: 80px 0;
+
+        .price-list-title {
+            font-size: 22px;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+            max-width: 40%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    
+        .price-box {
+            padding: 30px 15px;
+        }
+    
+        .price-type,
+        .price-area,
+        .price-amount {
+            font-size: 22px;
+            margin-bottom: 25px;
+        }
     }
 
-    .price-list-title {
-        font-size: 22px;
-        letter-spacing: 3px;
-        margin-bottom: 40px;
-    }
-
-    .price-box {
-        padding: 30px 15px;
-    }
-
-    .price-type,
-    .price-area,
-    .price-amount {
-        font-size: 22px;
-        margin-bottom: 25px;
-    }
+    
 
     /* Modal styles */
     .modal-content {
@@ -2509,6 +2677,8 @@ textarea.form-control {
     }
 }
 
+/* end of 768 */
+
 @media (max-width: 576px) {
     /* Sidebar styles */
 
@@ -2587,74 +2757,6 @@ textarea.form-control {
         left: 70px;
     }
 
-    .overview-section {
-        padding: 60px 0;
-
-        .overview-flower {
-            max-width: 80px;
-            top: 30px;
-        }
-
-        .overview-content {
-            .overview-title {
-                font-size: 20px;
-                letter-spacing: 3px;
-                margin-bottom: 30px;
-            }
-
-            .overview-description {
-                font-size: 13px;
-                line-height: 24px;
-                margin-bottom: 40px;
-                letter-spacing: 0.5px;
-            }
-
-            .overview-counters {
-                margin-top: 40px;
-                gap: 20px;
-
-                .counter-item {
-                    flex: 1 1 120px;
-                    margin-bottom: 20px;
-                    
-                    .counter {
-                        font-size: 36px;
-                    }
-
-                    .counter-label {
-                        font-size: 12px;
-                        letter-spacing: 1px;
-                    }
-                }
-            }
-        }
-    }
-
-    /* Highlights styles */
-    .highlights-section {
-        padding: 60px 0;
-
-        .highlights-title {
-            font-size: 20px;
-            letter-spacing: 2px;
-        }
-
-        .highlights-table {
-            .text-cell {
-                font-size: 14px;
-                padding: 15px 12px;
-            }
-
-            .icon-cell {
-                width: 45px;
-                padding: 15px 8px;
-
-                img {
-                    width: 22px;
-                }
-            }
-        }
-    }
 
     /* Price list styles */
     .price-list-section {
