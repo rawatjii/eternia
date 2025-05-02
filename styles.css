@@ -226,9 +226,16 @@ html, body {
     position: absolute;
     top: 0;
     left: 100px;
+    background:transparent;
     right: 0;
-    z-index: 100;
+    width: calc(100% - 100px);
+    z-index: 9999; /* Increase z-index to ensure it stays on top */
     overflow: hidden;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+    .row{
+        align-items: start;
+    }
 
     ._logo {
         display: flex;
@@ -242,12 +249,52 @@ html, body {
             object-fit: contain;
         }
 
+        .dark-logo{
+            display: none;
+        }
+
         .header-divider {
             width: 1px;
             height: 30px;
             background-color: white;
             margin: 0 25px;
         }
+    }
+
+    /* Styles for when header is pinned by GSAP */
+    &.gsap-header.pin-active {
+        background-color: rgba(255, 255, 255, 0.95) !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+        height:auto!important;
+
+        .row{
+            align-items: center;
+        }
+
+        ._logo{
+            padding-top:0;
+
+            .header-logo {
+
+                height: 45px;
+            }
+
+            .header-divider{
+                background-color:#000;
+            }
+        }
+
+        .dark-logo{
+            display: block;
+        }
+
+        .light-logo{
+            display: none;
+        }
+    }
+
+    .gsap-header.pin-active .header-divider {
+        background-color: #000 !important;
     }
 
     .header-buttons {
@@ -294,6 +341,7 @@ html, body {
         }
     }
 }
+
 
 .hero-section {
     position: relative;
@@ -2880,6 +2928,34 @@ textarea.form-control {
 /* end of 991 */
 
 @media (max-width: 768px) {
+
+    .header{
+
+        ._logo{
+
+            .header-logo{
+                height: 35px;
+            }
+            
+            .light-logo{
+                display:none;
+            }
+
+            .dark-logo{
+                display:block;
+            }
+        }
+
+        &.gsap-header.pin-active{
+            ._logo{
+
+                .header-logo{
+                    height: 35px;
+                }
+            }
+
+        }
+    }
     .overview-section {
         .overview-content {
             padding: 0;
@@ -2899,6 +2975,7 @@ textarea.form-control {
         position:relative;
         left: 0;
         padding: 15px;
+        width:100%;
 
         .header-buttons{
             display:none;
@@ -3166,16 +3243,16 @@ textarea.form-control {
 
     /* Modal styles */
     .modal-content {
-        padding: 25px;
+        padding: 15px;
     }
     
     .modal-inner {
-        padding: 30px;
+        padding: 25px;
     }
 
     .modal-title {
         font-size: 22px;
-        margin-bottom: 25px;
+        margin-bottom: 20px;
     }
 
     .modal-close {
@@ -3636,6 +3713,14 @@ textarea.form-control {
     .amenities-table .icon-cell img {
         width: 30px;
     }
+
+    .submit-btn{
+
+        padding: 8px 25px;
+        font-size: 14px;
+    }
+
+
 }
 
 /* end of 768 */

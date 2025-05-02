@@ -63,14 +63,14 @@
         <!-- Header -->
         <header class="header">
           <div class="container-fluid px-0">
-            <div class="row align-items-md-start">
+            <div class="row">
               <div class="col-6 d-flex align-items-start">
                 <div class="_logo">
-                  <img src="assets/images/logo/great_value.png" alt="Great Value" class="header-logo d-none d-md-block">
-                  <img src="assets/images/logo/great_value_dark.webp" alt="Great Value" class="header-logo d-md-none">
+                  <img src="assets/images/logo/great_value.png" alt="Great Value" class="header-logo light-logo">
+                  <img src="assets/images/logo/great_value_dark.webp" alt="Great Value" class="header-logo dark-logo">
                   <div class="header-divider"></div>
-                  <img src="assets/images/logo/yatharth.png" alt="Yatharth" class="header-logo d-none d-md-block">
-                  <img src="assets/images/logo/yatharth_dark.webp" alt="Yatharth" class="header-logo d-md-none">
+                  <img src="assets/images/logo/yatharth.png" alt="Yatharth" class="header-logo light-logo">
+                  <img src="assets/images/logo/yatharth_dark.webp" alt="Yatharth" class="header-logo dark-logo">
                 </div>
               </div>
               <div class="col-6 d-flex justify-content-end align-items-center">
@@ -79,7 +79,7 @@
                     Video
                     <i class="bi bi-play-circle"></i>
                   </button>
-                  <button class="btn btn-brochure">
+                  <button class="btn btn-brochure"  data-bs-toggle="modal" data-bs-target="#brochureModal">
                     Brochure
                     <i class="bi bi-download"></i>
                   </button>
@@ -834,6 +834,49 @@
     </div>
   </div>
 
+  <!-- brochure Modal -->
+  <div class="modal fade" id="brochureModal" tabindex="-1" aria-labelledby="brochureModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-inner">
+          <button type="button" class="modal-close" data-bs-dismiss="modal" aria-label="Close">
+            <i class="bi bi-x"></i>
+          </button>
+          <h3 class="modal-title">Download Brochure</h3>
+          <form class="enquiry-form">
+            <div class="row">
+              <div class="col-md-4 mb-md-3">
+                <div class="form-group">
+                  <label>Name</label>
+                  <input type="text" class="form-control" required>
+                </div>
+              </div>
+              <div class="col-md-4 mb-md-3">
+                <div class="form-group">
+                  <label>Mail ID</label>
+                  <input type="email" class="form-control" required>
+                </div>
+              </div>
+              <div class="col-md-4 mb-md-3">
+                <div class="form-group">
+                  <label>Phone Number</label>
+                  <input type="tel" class="form-control" required>
+                </div>
+              </div>
+            </div>
+            <div class="form-group mb-4">
+              <label>Message</label>
+              <textarea class="form-control" rows="2" required></textarea>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="submit-btn">Submit Now</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <!-- Bootstrap JS Bundle with Popper -->
@@ -859,6 +902,75 @@
       ignoreMobileResize: true, // skips ScrollTrigger.refresh() on mobile resize
       smoothTouch: 0.1, // much shorter smoothing time on touch devices
     });
+
+    // Set up fixed header with proper GSAP configuration
+    (() => {
+      const header = document.querySelector('.header');
+      const headerHeight = header.offsetHeight;
+      const isMobile = window.innerWidth <= 768;
+      
+      // Add a special class to the header for GSAP manipulation
+      header.classList.add('gsap-header');
+      
+      // Create a div to maintain the header's space in layout
+      const headerPlaceholder = document.createElement('div');
+      headerPlaceholder.style.height = `${headerHeight}px`;
+      headerPlaceholder.style.display = 'none';
+      header.parentNode.insertBefore(headerPlaceholder, header);
+      
+      // ScrollTrigger for tracking scroll position
+      ScrollTrigger.create({
+        start: 0,
+        end: 'max',
+        onUpdate: (self) => {
+          // Only add pin-active class after scrolling past 100px
+          if (self.scroll() >= 100) {
+            header.classList.add('pin-active');
+            // headerPlaceholder.style.display = 'block';
+            
+            // Switch to dark logos
+            // if(!isMobile){
+            //   document.querySelectorAll('.light-logo').forEach(logo => {
+            //   logo.classList.add('d-none');
+            //   logo.classList.remove('d-md-block');
+            // });
+            // document.querySelectorAll('.dark-logo').forEach(logo => {
+            //   logo.classList.remove('d-none');
+            //   logo.classList.add('d-md-block');
+            // });
+            // }
+            
+          } else {
+            header.classList.remove('pin-active');
+            // headerPlaceholder.style.display = 'none';
+            
+            // Switch back to light logos
+            // if(!isMobile){
+            //   document.querySelectorAll('.light-logo').forEach(logo => {
+            //   logo.classList.remove('d-none');
+            //   logo.classList.add('d-md-block');
+            // });
+            // document.querySelectorAll('.dark-logo').forEach(logo => {
+            //   logo.classList.add('d-none');
+            //   logo.classList.remove('d-md-block');
+            // });
+            // }
+            
+          }
+        }
+      });
+      
+      // Pin the header with ScrollTrigger
+      ScrollTrigger.create({
+        trigger: header,
+        start: "top top",
+        endTrigger: document.body,
+        end: "bottom top",
+        pin: true,
+        pinReparent: true,
+        pinSpacing: false,
+      });
+    })();
 
     // handle navigation links
 
