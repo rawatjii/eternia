@@ -2931,6 +2931,10 @@ textarea.form-control {
 
     .header{
 
+        .row{
+            align-items: center;
+        }
+
         ._logo{
 
             .header-logo{
@@ -3124,6 +3128,10 @@ textarea.form-control {
     .overview-section {
         padding: 60px 0;
 
+        .overview-flower{
+            max-width: 70px;
+        }
+
         .overview-content {
 
             .overview-subtitle{
@@ -3169,6 +3177,11 @@ textarea.form-control {
     .highlights-section {
         padding: 60px 0;
 
+        .highlights-flower{
+            max-width: 70px;
+            top: 20px;
+        }
+
         .highlights-subtitle{
             font-size: 12px;
             letter-spacing: 8px;
@@ -3207,6 +3220,11 @@ textarea.form-control {
     /* Price list styles */
     .price-list-section {
         padding: 60px 0;
+
+        .price-list-flower{
+            max-width: 70px;
+            top: 30px;
+        }
 
         .price-list-subtitle{
             font-size: 12px;
@@ -3251,7 +3269,7 @@ textarea.form-control {
     }
 
     .modal-title {
-        font-size: 22px;
+        font-size: 18px;
         margin-bottom: 20px;
     }
 
@@ -3334,6 +3352,11 @@ textarea.form-control {
     /* Location styles */
     .location-section {
         padding: 60px 0;
+
+        .location-flower{
+            max-width: 80px;
+            top: 40px;
+        }
 
         .location-subtitle{
             font-size: 12px;
@@ -3428,7 +3451,7 @@ textarea.form-control {
         }
         
         .contact-us-flower-right {
-            top: 60px;
+            top: 30px;
             width: 60px;
         }
         
@@ -3599,7 +3622,8 @@ textarea.form-control {
         }
         
         .gallery-flower {
-            top: 80px;
+            top: 20px;
+            max-width: 80px;
         }
         
         .gallery-caption {
