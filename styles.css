@@ -59,6 +59,11 @@ html, body {
     padding-right: 40px;    
 }
 
+.px_50{
+    padding-left: 50px;
+    padding-right: 50px;    
+}
+
 .px_60{
     padding-left: 60px;
     padding-right: 60px;    
@@ -984,7 +989,7 @@ html, body {
 /* Contact Us Section */
 .contact-us-section {
     position: relative;
-    padding: 80px 0;
+    padding: 100px 0;
     overflow: hidden;
 
     .contact-us-bg {
@@ -1051,6 +1056,10 @@ html, body {
         text-align: center;
         position: relative;
         z-index: 3;
+        max-width: 40%;
+        line-height: 50px;
+        margin-left: auto;
+        margin-right: auto;
         opacity: 0;
         transform: translateY(20px);
     }
@@ -1150,7 +1159,8 @@ html, body {
         font-family: var(--font-primary);
         font-size: 16px;
         color: #000000;
-        font-weight: var(--font-semibold);
+        font-weight: var(--font-medium);
+        letter-spacing: 1px;
     }
 }
 
@@ -1448,93 +1458,148 @@ textarea.form-control {
 /* Location section */
 .location-section {
     position: relative;
-    padding: 120px 0;
+    padding: 100px 0;
     overflow: hidden;
+
+    .location-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+    }
+    
+    .location-flower {
+        position: absolute;
+        right: 0;
+        top: 100px;
+        z-index: 2;
+        max-width: 100px;
+        height: auto;
+        opacity: 0;
+        transition: opacity 1.5s ease;
+        will-change: opacity;
+    }
+
+    .location-multi-flowers {
+        z-index: 1;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+    
+    .location-subtitle {
+        color: #000000e6;
+        font-family: var(--font-primary);
+        font-size: 14px;
+        font-weight: var(--font-semibold);
+        letter-spacing: 15px;
+        text-transform: uppercase;
+        margin-bottom: 0;
+        text-align: center;
+        position: relative;
+        z-index: 3;
+    }
+    
+    .location-title {
+        font-family: var(--font-secondary);
+        font-size: 28px;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        margin-top: 50px;
+        margin-bottom: 20px;
+        color: black;
+        text-align: center;
+        position: relative;
+        z-index: 3;
+        max-width: 40%;
+        line-height: 50px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .location-description {
+        font-family: var(--font-primary);
+        font-size: 16px;
+        line-height: 1.6;
+        color: #000000e6;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 80px;
+        position: relative;
+        z-index: 3;
+        letter-spacing: 1px;
+    }
+    
+    .location-map {
+        position: relative;
+        z-index: 3;
+        margin-bottom: 30px;
+    }
+    
+    .map-image {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+    
+    .location-table {
+        width: 100%;
+        position: relative;
+        z-index: 3;
+        border-collapse: separate;
+        border-spacing: 0;
+    }
+    
+    .location-table table {
+        width: 100%;
+    }
+    
+    .location-table tr {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+        display: block;
+        opacity: 0; /* Start hidden for animation */
+        transform: translateX(50px); /* Start position for animation */
+        will-change: transform, opacity; /* Performance optimization for animations */
+    }
+    
+    .location-table tr:last-child {
+        border-bottom: none;
+    }
+    
+    .location-table .icon-cell {
+        padding: 15px 20px;
+        vertical-align: middle;
+        border-right: 1px solid rgba(0, 0, 0, 0.4);
+        width: 80px;
+    }
+    
+    .location-table .icon-cell img {
+        width: 40px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    
+    .location-table .text-cell {
+        font-family: var(--font-primary);
+        font-size: 18px;
+        color: #000000;
+        padding: 20px 25px;
+        vertical-align: middle;
+        line-height: 1.5;
+        letter-spacing: 0.5px;
+    }
+
+    .location-table .text-cell .location-icon{
+        width:18px;
+        margin-right: 8px;
+    }
+    
 }
 
-.location-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-}
-
-.location-title {
-    font-family: var(--font-secondary);
-    font-size: 28px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    color: black;
-    text-align: center;
-    position: relative;
-    z-index: 3;
-}
-
-.location-description {
-    font-family: var(--font-primary);
-    font-size: 16px;
-    line-height: 1.6;
-    color: black;
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 60px;
-    position: relative;
-    z-index: 3;
-}
-
-.location-map {
-    position: relative;
-    z-index: 3;
-    margin-bottom: 30px;
-}
-
-.map-image {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.location-table {
-    position: relative;
-    z-index: 3;
-}
-
-.location-row {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 15px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.location-row:last-child {
-    border-bottom: none;
-}
-
-.location-icon {
-    width: 40px;
-    height: 40px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.location-icon img {
-    width: 100%;
-    height: auto;
-}
-
-.location-text {
-    font-family: var(--font-primary);
-    font-size: 16px;
-    color: black;
-    line-height: 1.4;
-}
 
 /* Floor plans section */
 .floor-plans-section {
@@ -1550,6 +1615,18 @@ textarea.form-control {
         height: 100%;
         object-fit: cover;
         z-index: 1;
+    }
+
+    .floor-plans-flower {
+        position: absolute;
+        right: 0;
+        top: 200px;
+        z-index: 2;
+        max-width: 100px;
+        height: auto;
+        opacity: 0;
+        transition: opacity 1.5s ease;
+        will-change: opacity;
     }
 
     .floor-plans-subtitle {
@@ -1576,6 +1653,10 @@ textarea.form-control {
         text-align: center;
         position: relative;
         z-index: 3;
+        max-width: 40%;
+        line-height: 50px;
+        margin-left: auto;
+        margin-right: auto;
         opacity: 0;
         transform: translateY(20px);
     }
@@ -1583,11 +1664,13 @@ textarea.form-control {
     .floor-plans-content {
         position: relative;
         z-index: 3;
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .plan-image-container {
         margin-bottom: 40px;
-        height: 500px;
         position: relative;
         display: flex;
         justify-content: center;
@@ -1595,10 +1678,11 @@ textarea.form-control {
     }
 
     .plan-image {
-        position: absolute;
+        position: relative;
         width: 100%;
+        /* width: 100%;
         height: 100%;
-        object-fit: contain;
+        object-fit: contain; */
         opacity: 0;
         transition: opacity 0.5s ease;
         display: none;
@@ -1607,6 +1691,11 @@ textarea.form-control {
             opacity: 1;
             display: block;
         }
+    }
+
+    .swiper-container{
+        position: relative;
+        margin: 0 80px;
     }
 
     .swiper_control{
@@ -1646,7 +1735,7 @@ textarea.form-control {
         height: 34px;
         background: black;
         border-radius: 50%;
-        margin: 0 20px;
+        margin: 0;
         top: 50%;
         transform: translateY(-50%);
         
@@ -1654,6 +1743,249 @@ textarea.form-control {
             font-size: 14px;
             color: white;
         }
+    }
+
+    .swiper-button-prev{
+        left:0;
+    }
+
+    .plan-nav-next{
+        right:0;
+    }
+}
+
+
+
+/* Footer Section */
+.footer-section {
+    position: relative;
+    padding: 80px 0 0;
+    overflow: hidden;
+
+    .footer-bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    .footer-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(67, 82, 53, 0.9);
+        z-index: 0;
+    }
+
+    .footer-flower {
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 100px;
+        height: auto;
+        z-index: 1;
+        opacity: 0;
+    }
+
+    .footer-title {
+        color: #ffffff;
+        font-family: var(--font-secondary);
+        font-size: 28px;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        margin-bottom: 60px;
+        text-align: center;
+        position: relative;
+        z-index: 3;
+        max-width: 40%;
+        line-height: 50px;
+        margin-left: auto;
+        margin-right: auto;
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    .footer-content {
+        position: relative;
+        z-index: 2;
+        opacity: 0;
+        transform: translateY(20px);
+
+        .right_col{
+            position: relative;
+
+            &:before{
+                position:absolute;
+                content:"";
+                top:0;
+                left:0;
+                width:1px;
+                height:100%;
+                background: linear-gradient(to bottom, transparent, #ffffff, transparent);
+            }
+        }
+        
+        .footer-company {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            width: 220px;
+            height: auto;
+            margin-bottom: 40px;
+        }
+        
+        .footer-description {
+            color: #ffffff;
+            font-family: var(--font-primary);
+            font-size: 14px;
+            line-height: 1.8;
+            font-weight: var(--font-light);
+            letter-spacing: 1px;
+        }
+        
+        .footer-divider {
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, #ffffff, transparent);
+        }
+    }
+}
+
+/* Footer Section Animations */
+.footer-section.animated {
+    .footer-title,
+    .footer-content {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .footer-title {
+        transition-delay: 0.1s;
+    }
+
+    .footer-content {
+        transition-delay: 0.3s;
+    }
+
+    .footer-flower {
+        opacity: 1;
+        transition: opacity 1.5s ease;
+        transition-delay: 0.5s;
+    }
+}
+
+/* Copyright Section */
+.copyright-section {
+    padding: 10px 0;
+    text-align: center;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+    width: 100%;
+    position: relative;
+    margin-top: 50px;
+}
+
+.copyright-text,
+.disclaimer-text {
+    color: #ffffff;
+    font-family: var(--font-primary);
+    font-size: 12px;
+    font-weight: var(--font-regular);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 15px 0;
+}
+
+.gtf-link {
+    color: #ffffff;
+    text-decoration: underline;
+    transition: all 0.3s ease;
+}
+
+.gtf-link:hover {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+
+/* Disclaimer Section */
+.disclaimer {
+    padding: 30px 0;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    /* margin-top: 30px; */
+    /* border-top: 1px solid rgba(255, 255, 255, 0.3); */
+
+    .disclaimer-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    
+    .disclaimer-logos {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .disclaimer-logo {
+        height: 60px;
+        width: auto;
+    }
+    
+    .disclaimer-text-container {
+        flex: 1;
+        padding-left: 40px;
+        text-align: left;
+        max-width: 80%;
+    }
+    
+    .disclaimer-para {
+        color: #ffffff;
+        font-family: var(--font-primary);
+        font-size: 14px;
+        line-height: 1.6;
+        margin: 0;
+        max-width: 50%;
+        letter-spacing: 0.5px;
+    }
+}
+
+
+
+.sidebar-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid black;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 24px;
+    transition: all 0.3s ease;
+    z-index: 1001;
+    
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    
+    i {
+        line-height: 1;
     }
 }
 
@@ -1787,6 +2119,15 @@ textarea.form-control {
     }
 
     /* end of price list section */
+
+    .contact-us-section{
+
+        .contact-info-container{
+            padding: 20px 40px;
+        }
+    }
+
+    /* end of contact us section */
 }
 
 /* end of 1500 */
@@ -2000,9 +2341,91 @@ textarea.form-control {
         
     }
 
-
-
     /* end of amenities section */
+
+    /* location section */
+
+    .location-section{
+
+        .location-title{
+            max-width: 60%;
+            margin-bottom: 30px;
+        }
+
+        .location-flower{
+
+        }
+
+        .location-table .icon-cell{
+            width: 60px;
+            padding: 10px 10px;
+        }
+
+        .location-table .icon-cell img{
+            width: 30px;
+        }
+
+        .location-table .text-cell{
+            font-size: 14px;
+            padding: 10px 15px;
+        }
+            
+    }
+
+    /* end of location section */
+
+    /* floor plans section */
+
+    .floor-plans-section{
+
+        .floor-plans-title{
+            max-width: 60%;
+            margin-bottom: 30px;
+        }
+            
+    }
+
+    /* end of floor plans section */
+
+    /* contact us section */
+
+    .contact-us-section{
+
+        .contact-us-title{
+            max-width: 60%;
+            margin-bottom: 30px;
+        }
+
+    }
+
+    /* end of contact us section */
+
+    /* footer section */
+
+    .footer-section{
+
+        .footer-title{
+            max-width: 60%;
+            margin-bottom: 50px;
+        }
+        
+        .footer-content{
+
+            .footer-logo{
+                width: 170px;
+            }
+        }
+
+    }
+
+    /* end of footer section */
+
+    .disclaimer{
+        .disclaimer-para{
+            font-size: 12px;
+            max-width: 70%;
+        }
+    }
 }
 
 /* end of 1200 */
@@ -2159,30 +2582,56 @@ textarea.form-control {
 
     /* Floor plans styles */
     .floor-plans-section {
-        .floor-plans-subtitle {
-            font-size: 12px;
-            letter-spacing: 8px;
-        }
-        
-        .floor-plans-title {
-            font-size: 24px;
-            letter-spacing: 4px;
-            margin-bottom: 40px;
+        .swiper-container{
+            margin:0;
         }
         
         .plan-image-container {
             height: 400px;
             margin-bottom: 30px;
         }
+
+        .swiper_control{
+            margin-top: 30px;
+        }
+
+        .plan-nav-prev, .plan-nav-next{
+            margin:0;
+        }
+
+        .plan-nav-prev{
+            left: 0;
+        }
+
+        .plan-nav-next{
+            right: 0;
+        }
     }
 
     /* Contact Us Section Responsive */
-    .contact-us-title {
-        font-size: 24px;
-        letter-spacing: 4px;
-        margin-bottom: 50px;
-        padding: 0 20px;
+    .contact-us-section{
+
+        .contact-info-container{
+            padding: 10px 20px;
+        }
+
+        .contact-info-item{
+            display:block;
+        }
+
+        .contact-info-icon{
+            font-size: 18px;
+            margin-bottom: 5px;
+            margin-right:0;
+        }
+
+        .contact-info-text{
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            display: block;
+        }
     }
+    
 
     /* Footer styles */
     .footer-title {
@@ -2567,32 +3016,44 @@ textarea.form-control {
         
     }
 
-    
-
-    
 
     /* Location styles */
     .location-section {
-        padding: 80px 0;
+        padding: 60px 0;
+
+        .location-subtitle{
+            font-size: 12px;
+            letter-spacing: 8px;
+        }
+
+        .location-title {
+            font-size: 20px;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+            max-width: 100%;
+            margin-top: 25px;
+            line-height: inherit;
+        }
+    
+        .location-description {
+            font-size: 12px;
+            margin-bottom: 50px;
+        }
+    
+        .location-text {
+            font-size: 15px;
+        }
+
+        .location-multi-flowers{
+            bottom: -20px;
+        }
     }
 
-    .location-title {
-        font-size: 22px;
-        letter-spacing: 3px;
-    }
-
-    .location-description {
-        font-size: 14px;
-        margin-bottom: 30px;
-    }
-
-    .location-text {
-        font-size: 15px;
-    }
+    
 
     /* Floor plans styles */
     .floor-plans-section {
-        padding: 80px 0;
+        padding: 60px 0;
         
         .floor-plans-subtitle {
             font-size: 12px;
@@ -2600,23 +3061,33 @@ textarea.form-control {
         }
         
         .floor-plans-title {
-            font-size: 22px;
+            font-size: 20px;
             letter-spacing: 3px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
+            max-width: 100%;
+            margin-top: 25px;
+            line-height: inherit;
+        }
+
+        .plan-image{
+            position:relative;
         }
         
         .plan-image-container {
-            height: 350px;
+            height: auto;
             margin-bottom: 30px;
+        }
+
+        .floor-plans-flower{
+            top: 80px;
         }
         
         .planSwiper {
-            height: 80px;
-            margin-top: 40px;
+            height: 60px;
         }
         
         .plan-slide {
-            height: 80px;
+            height: 60px;
             font-size: 14px;
         }
         
@@ -2624,7 +3095,7 @@ textarea.form-control {
         .plan-nav-next {
             width: 30px;
             height: 30px;
-            margin: 0 10px;
+            margin: 0 0;
             
             &:after {
                 font-size: 14px;
@@ -2648,17 +3119,17 @@ textarea.form-control {
         }
         
         .contact-us-subtitle {
-            font-size: 10px;
-            letter-spacing: 6px;
-            color: #000000;
+            font-size: 12px;
+            letter-spacing: 8px;
         }
         
         .contact-us-title {
             font-size: 20px;
-            letter-spacing: 2px;
-            margin-top: 20px;
-            margin-bottom: 25px;
-            color: #000000;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+            max-width: 100%;
+            margin-top: 25px;
+            line-height: inherit;
         }
         
         .contact-form-parent {
@@ -2670,10 +3141,19 @@ textarea.form-control {
         .contact-form-content {
             padding: 20px;
         }
-        
-        .form-group {
-            margin-bottom: 25px;
+
+        .contact-form{
+            .form-group {
+                margin-bottom: 10px;
+            }
+
+            .submit-btn{
+                margin-top:20px;
+                font-size: 12px;
+            }
         }
+        
+        
         
         .form-control {
             font-size: 14px;
@@ -2694,17 +3174,13 @@ textarea.form-control {
             font-size: 13px;
         }
         
-        .contact-info-row {
-            margin-top: 30px;
-        }
-        
         .contact-info-container {
-            padding: 20px 10px;
+            padding: 10px;
         }
         
         .contact-info-item {
             padding: 8px 5px;
-            margin-bottom: 10px;
+            display:flex;
         }
         
         .contact-info-icon {
@@ -2712,9 +3188,6 @@ textarea.form-control {
             margin-right: 8px;
         }
         
-        .contact-info-text {
-            font-size: 13px;
-        }
     }
 
     /* Footer Section Responsive */
@@ -2728,13 +3201,11 @@ textarea.form-control {
         
         .footer-title {
             font-size: 20px;
-            letter-spacing: 2px;
-            margin-bottom: 30px;
-        }
-        
-        .footer-logo {
-            width: 120px;
-            margin-bottom: 20px;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+            max-width: 100%;
+            margin-top: 25px;
+            line-height: inherit;
         }
         
         .footer-description {
@@ -2744,6 +3215,55 @@ textarea.form-control {
         
         .footer-divider {
             margin: 20px auto;
+        }
+
+        .footer-content{
+        
+            .footer-logo {
+                width: 140px;
+                margin-bottom: 20px;
+            }
+
+            .footer-company{
+                border-top: 1px solid #fff;
+                padding-top: 30px;
+            }
+
+            .footer-description{
+                font-size: 12px;
+            }
+        }
+    }
+
+    .copyright-section{
+
+        margin-top: 20px;
+        padding: 10px 20px;
+
+        .copyright-text, .disclaimer-text{
+
+            font-size: 10px;
+        }
+    }
+
+    .disclaimer{
+
+        .disclaimer-logo{
+
+            height: 40px;
+        }
+
+        .disclaimer-text-container{
+
+            max-width: 100%;
+            padding-left: 0;
+        }
+
+        .disclaimer-para{
+
+            max-width: 100%;
+            text-align: center;
+            font-size: 10px;
         }
     }
 }
@@ -2882,271 +3402,10 @@ textarea.form-control {
         font-size: 18px;
     }
 
-    .amenity-text {
-        font-size: 14px;
-    }
-
-    /* Location styles */
-    .location-section {
-        padding: 60px 0;
-    }
-
-    .location-title {
-        font-size: 20px;
-        letter-spacing: 2px;
-    }
-
-    .location-description {
-        font-size: 13px;
-        margin-bottom: 25px;
-    }
-
-    .location-row {
-        padding: 12px 0;
-        gap: 15px;
-    }
-
-    .location-icon {
-        width: 35px;
-        height: 35px;
-    }
-
-    .location-text {
-        font-size: 14px;
-    }
-
-    /* Floor plans styles */
-    .floor-plans-section {
-        padding: 60px 0;
-        
-        .floor-plans-subtitle {
-            font-size: 10px;
-            letter-spacing: 6px;
-        }
-        
-        .floor-plans-title {
-            font-size: 20px;
-            letter-spacing: 2px;
-            margin-top: 20px;
-            margin-bottom: 30px;
-        }
-        
-        .plan-image-container {
-            height: 250px;
-            margin-bottom: 25px;
-        }
-        
-        .planSwiper {
-            height: 80px;
-            margin-top: 40px;
-        }
-        
-        .plan-slide {
-            height: 80px;
-            font-size: 14px;
-        }
-        
-        .plan-nav-prev,
-        .plan-nav-next {
-            width: 30px;
-            height: 30px;
-            margin: 0 10px;
-            
-            &:after {
-                font-size: 14px;
-            }
-        }
-    }
-
-    /* Contact Us Section Responsive */
-    .contact-us-section {
-        padding: 50px 0;
-        
-        .contact-us-flower {
-            top: 50px;
-            right: 20px;
-            width: 80px;
-        }
-        
-        .contact-us-flower-right {
-            top: 60px;
-            width: 60px;
-        }
-        
-        .contact-us-subtitle {
-            font-size: 10px;
-            letter-spacing: 6px;
-            color: #000000;
-        }
-        
-        .contact-us-title {
-            font-size: 20px;
-            letter-spacing: 2px;
-            margin-top: 20px;
-            margin-bottom: 25px;
-            color: #000000;
-        }
-        
-        .contact-form-parent {
-            padding: 10px;
-            margin-bottom: 30px;
-            border: 1px solid rgba(0, 0, 0, 0.3);
-        }
-        
-        .contact-form-content {
-            padding: 20px;
-        }
-        
-        .form-group {
-            margin-bottom: 25px;
-        }
-        
-        .form-control {
-            font-size: 14px;
-            padding: 6px 0;
-            
-            &::placeholder {
-                font-size: 10px;
-                letter-spacing: 2px;
-            }
-        }
-        
-        .mb-4 {
-            margin-bottom: 40px !important;
-        }
-        
-        .submit-btn {
-            padding: 8px 30px;
-            font-size: 13px;
-        }
-        
-        .contact-info-row {
-            margin-top: 30px;
-        }
-        
-        .contact-info-container {
-            padding: 20px 10px;
-        }
-        
-        .contact-info-item {
-            padding: 8px 5px;
-            margin-bottom: 10px;
-        }
-        
-        .contact-info-icon {
-            font-size: 18px;
-            margin-right: 8px;
-        }
-        
-        .contact-info-text {
-            font-size: 13px;
-        }
-    }
-
-    /* Footer Section Responsive */
-    .footer-section {
-        padding: 50px 0;
-        
-        .footer-flower {
-            top: 40px;
-            width: 60px;
-        }
-        
-        .footer-title {
-            font-size: 20px;
-            letter-spacing: 2px;
-            margin-bottom: 30px;
-        }
-        
-        .footer-logo {
-            width: 120px;
-            margin-bottom: 20px;
-        }
-        
-        .footer-description {
-            font-size: 12px;
-            line-height: 1.5;
-        }
-        
-        .footer-divider {
-            margin: 20px auto;
-        }
-    }
-
     
 }
 
-@media (max-width: 375px) {
-    .hero-title-image {
-        width: 200px;
-    }
 
-    .hero-description {
-        font-size: 14px;
-    }
-
-    .overview-title {
-        font-size: 18px;
-        letter-spacing: 2px;
-    }
-
-    .overview-description {
-        font-size: 13px;
-    }
-    
-    /* Contact Us Section Responsive */
-    .contact-us-section {
-        .contact-us-title {
-            font-size: 18px;
-            letter-spacing: 2px;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-control {
-            font-size: 13px;
-            padding: 5px 0;
-            
-            &::placeholder {
-                font-size: 9px;
-                letter-spacing: 1px;
-            }
-        }
-        
-        .mb-4 {
-            margin-bottom: 30px !important;
-        }
-        
-        .submit-btn {
-            padding: 8px 25px;
-            font-size: 12px;
-        }
-    }
-
-    .contact-us-flower-right {
-        top: 50px;
-        width: 40px;
-    }
-
-    .footer-flower {
-        top: 30px;
-        width: 40px;
-    }
-    
-    .footer-title {
-        font-size: 18px;
-        letter-spacing: 2px;
-    }
-}
-
-/* Handle height-based media queries */
-@media (max-height: 700px) {
-    .hero-content {
-        gap: 20px;
-    }
-}
 
 /* Fallback for when animations don't fire */
 .js-animation-fallback {
@@ -3158,7 +3417,11 @@ textarea.form-control {
     .highlights-flower,
     .price-list-flower,
     .price-list-title,
-    .price-box {
+    .price-box,
+    .location-row,
+    .location-flower,
+    .location-multi-flowers,
+    .floor-plans-flower {
         visibility: visible !important;
         opacity: 1 !important;
         transform: none !important;
@@ -3166,230 +3429,6 @@ textarea.form-control {
 }
 
 
-@media (max-width: 375px) {
-    .contact-info-container {
-        padding: 15px 8px;
-    }
-    
-    .contact-info-item {
-        padding: 5px;
-    }
-    
-    .contact-info-icon {
-        font-size: 16px;
-        margin-right: 6px;
-    }
-    
-    .contact-info-text {
-        font-size: 12px;
-    }
-}
-
-/* Footer Section */
-.footer-section {
-    position: relative;
-    padding: 80px 0 0;
-    overflow: hidden;
-
-    .footer-bg {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        top: 0;
-        left: 0;
-        z-index: -1;
-    }
-
-    .footer-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(67, 82, 53, 0.9);
-        z-index: 0;
-    }
-
-    .footer-flower {
-        position: absolute;
-        top: 50px;
-        right: 0;
-        width: 100px;
-        height: auto;
-        z-index: 1;
-        opacity: 0;
-    }
-
-    .footer-title {
-        color: #ffffff;
-        font-family: var(--font-secondary);
-        font-size: 28px;
-        letter-spacing: 5px;
-        text-transform: uppercase;
-        margin-bottom: 60px;
-        text-align: center;
-        position: relative;
-        z-index: 3;
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    .footer-content {
-        position: relative;
-        z-index: 2;
-        opacity: 0;
-        transform: translateY(20px);
-
-        .right_col{
-            position: relative;
-
-            &:before{
-                position:absolute;
-                content:"";
-                top:0;
-                left:0;
-                width:1px;
-                height:100%;
-                background: linear-gradient(to bottom, transparent, #ffffff, transparent);
-            }
-        }
-        
-        .footer-company {
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        
-        .footer-logo {
-            width: 180px;
-            height: auto;
-            margin-bottom: 40px;
-        }
-        
-        .footer-description {
-            color: #ffffff;
-            font-family: var(--font-primary);
-            font-size: 14px;
-            line-height: 1.8;
-            font-weight: var(--font-light);
-            letter-spacing: 1px;
-        }
-        
-        .footer-divider {
-            width: 1px;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent, #ffffff, transparent);
-        }
-    }
-}
-
-/* Footer Section Animations */
-.footer-section.animated {
-    .footer-title,
-    .footer-content {
-        opacity: 1;
-        transform: translateY(0);
-        transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .footer-title {
-        transition-delay: 0.1s;
-    }
-
-    .footer-content {
-        transition-delay: 0.3s;
-    }
-
-    .footer-flower {
-        opacity: 1;
-        transition: opacity 1.5s ease;
-        transition-delay: 0.5s;
-    }
-}
-
-/* Copyright Section */
-.copyright-section {
-    padding: 10px 0;
-    text-align: center;
-    border-top: 1px solid #ffffff;
-    border-bottom: 1px solid #ffffff;
-    width: 100%;
-    position: relative;
-    margin-top: 50px;
-}
-
-.copyright-text,
-.disclaimer-text {
-    color: #ffffff;
-    font-family: var(--font-primary);
-    font-size: 12px;
-    font-weight: var(--font-regular);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin: 15px 0;
-}
-
-.gtf-link {
-    color: #ffffff;
-    text-decoration: underline;
-    transition: all 0.3s ease;
-}
-
-.gtf-link:hover {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-@media (max-width: 576px) {
-    .copyright-text,
-    .disclaimer-text {
-        font-size: 12px;
-    }
-}
-
-/* Disclaimer Section */
-.disclaimer {
-    padding: 30px 0;
-    text-align: center;
-    width: 100%;
-    position: relative;
-    /* margin-top: 30px; */
-    /* border-top: 1px solid rgba(255, 255, 255, 0.3); */
-}
-
-.disclaimer-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.disclaimer-logos {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.disclaimer-logo {
-    height: 60px;
-    width: auto;
-}
-
-.disclaimer-text-container {
-    flex: 1;
-    padding-left: 40px;
-    text-align: left;
-    max-width: 80%;
-}
-
-.disclaimer-para {
-    color: #ffffff;
-    font-family: var(--font-primary);
-    font-size: 14px;
-    line-height: 1.6;
-    margin: 0;
-    max-width: 50%;
-    letter-spacing: 0.5px;
-}
 
 @media (max-width: 991px) {
     .disclaimer-content {
@@ -3401,20 +3440,6 @@ textarea.form-control {
         padding-left: 0;
         text-align: center;
         max-width: 100%;
-    }
-}
-
-@media (max-width: 576px) {
-    .disclaimer-logos {
-        gap: 15px;
-    }
-    
-    .disclaimer-logo {
-        height: 50px;
-    }
-    
-    .disclaimer-para {
-        font-size: 12px;
     }
 }
 
@@ -3497,32 +3522,6 @@ textarea.form-control {
     }
 }
 
-.sidebar-close-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 1px solid black;
-    background: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 24px;
-    transition: all 0.3s ease;
-    z-index: 1001;
-    
-    &:hover {
-        background-color: rgba(0, 0, 0, 0.1);
-    }
-    
-    i {
-        line-height: 1;
-    }
-}
-
 /* Responsive styling for amenities table */
 @media (max-width: 991px) {
     .amenities-table .icon-cell {
@@ -3555,20 +3554,3 @@ textarea.form-control {
         width: 30px;
     }
 }
-
-@media (max-width: 576px) {
-    .amenities-table .icon-cell {
-        padding: 8px;
-        width: 40px;
-    }
-    
-    .amenities-table .text-cell {
-        font-size: 13px;
-        padding: 8px 10px;
-        letter-spacing: 0;
-    }
-    
-    .amenities-table .icon-cell img {
-        width: 22px;
-    }
-} 
