@@ -575,6 +575,58 @@
           </div>
         </section>
 
+        <!-- Gallery Section -->
+        <section class="gallery-section" id="gallery-section">
+          <img src="assets/images/gallery/bg.png" alt="Gallery Background" class="gallery-bg">
+          <img src="assets/images/gallery/flower.png" alt="Gallery Flower" class="gallery-flower">
+          <img src="assets/images/multi_flowers.png" alt="Multi Flowers" class="gallery-multi-flowers">
+          <div class="container">
+            <h5 class="gallery-subtitle">Gallery</h5>
+            <h2 class="gallery-title">Inspired by Eternity. Designed for Today</h2>
+
+            <div class="gallery-slider-container">
+              <!-- Swiper -->
+              <div class="swiper gallerySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="gallery-slide">
+                      <img src="assets/images/gallery/img1.webp" alt="gallery image" class="img-fluid gallery_img" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="gallery-slide">
+                      <img src="assets/images/gallery/img2.webp" alt="gallery image" class="img-fluid gallery_img" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="gallery-slide">
+                      <img src="assets/images/gallery/img3.webp" alt="gallery image" class="img-fluid gallery_img" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="gallery-slide">
+                      <img src="assets/images/gallery/img4.webp" alt="gallery image" class="img-fluid gallery_img" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="gallery-slide">
+                      <img src="assets/images/gallery/img5.webp" alt="gallery image" class="img-fluid gallery_img" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="gallery-slide">
+                      <img src="assets/images/gallery/img6.webp" alt="gallery image" class="img-fluid gallery_img" />
+                    </div>
+                  </div>
+                </div>
+                <!-- Navigation buttons -->
+                <div class="swiper-button-prev gallery-nav-prev"></div>
+                <div class="swiper-button-next gallery-nav-next"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <!-- Contact Us Section -->
         <section class="contact-us-section" id="contact-us">
           <img src="assets/images/contact-us/bg.png" alt="Contact Us Background" class="contact-us-bg">
@@ -792,6 +844,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="js/ScrollSmoother.min.js"></script>
+  <script src="js/queryform.min.ssl.js"></script>
   <script>
     // Register GSAP plugins
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
@@ -1203,6 +1256,50 @@
       }
     });
 
+    // Gallery section animations
+    ScrollTrigger.create({
+      trigger: ".gallery-section",
+      start: "top 80%",
+      markers: false,
+      once: true,
+      onEnter: function () {
+        console.log("Gallery section entered viewport");
+        
+        // Subtitle animation
+        gsap.to(".gallery-subtitle", {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power2.out"
+        });
+        
+        // Fade in flower
+        gsap.to(".gallery-flower", {
+          opacity: 1,
+          duration: 1.5,
+          ease: "power2.out"
+        });
+        
+        // Title animation
+        gsap.to(".gallery-title", {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power2.out",
+          delay: 0.2
+        });
+        
+        // Slider animation
+        gsap.from(".gallery-slider-container", {
+          opacity: 0,
+          y: 50,
+          duration: 1,
+          ease: "power2.out",
+          delay: 0.4
+        });
+      }
+    });
+
     // Footer section animations
     ScrollTrigger.create({
       trigger: ".footer-section",
@@ -1448,7 +1545,51 @@
         }
       });
 
-      // Initialize Swiper
+      // Initialize Gallery Swiper
+      const gallerySwiper = new Swiper('.gallerySwiper', {
+        slidesPerView: 1.5,
+        centeredSlides: true,
+        spaceBetween: 30,
+        loop: true,
+        effect: 'slide',
+        speed: 600,
+        navigation: {
+          nextEl: '.gallery-nav-next',
+          prevEl: '.gallery-nav-prev',
+        },
+        breakpoints: {
+          320: {
+            slidesPerView: 1.2,
+            spaceBetween: 10,
+          },
+          576: {
+            slidesPerView: 1.2,
+            spaceBetween: 15,
+          },
+          768: {
+            slidesPerView: 1.3,
+            spaceBetween: 20,
+          },
+          992: {
+            slidesPerView: 1.5,
+            spaceBetween: 70,
+          }
+        }
+      });
+
+      // Add opacity styling for non-active slides
+      // gallerySwiper.on('slideChangeTransitionStart', function () {
+      //   const slides = document.querySelectorAll('.gallerySwiper .swiper-slide');
+      //   slides.forEach(slide => {
+      //     if (!slide.classList.contains('swiper-slide-active')) {
+      //       slide.style.opacity = '0.5';
+      //     } else {
+      //       slide.style.opacity = '1';
+      //     }
+      //   });
+      // });
+
+      // Initialize Amenities Swiper
       const amenitiesSwiper = new Swiper('.amenitiesSwiper', {
         slidesPerView: 1,
         spaceBetween: 30,
