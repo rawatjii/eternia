@@ -75,10 +75,10 @@
               </div>
               <div class="col-6 d-flex justify-content-end align-items-center">
                 <div class="header-buttons">
-                  <button class="btn btn-video">
+                  <!-- <button class="btn btn-video">
                     Video
                     <i class="bi bi-play-circle"></i>
-                  </button>
+                  </button> -->
                   <button class="btn btn-brochure"  data-bs-toggle="modal" data-bs-target="#brochureModal">
                     Brochure
                     <i class="bi bi-download"></i>
@@ -100,6 +100,8 @@
 
         <!-- Hero Section -->
         <section class="hero-section" id="hero-section">
+          
+
           <div class="container-fluid px-0">
             <div class="row">
               <div class="col-md-6 hero-left-col">
@@ -122,12 +124,12 @@
                       Tech Zone IV, Greater Noida (W)</div>
                   </div>
                 </div>
+                <!-- <img src="assets/images/hero/arrow_down.png" alt="Scroll Down" class="hero-arrow"> -->
                 <div class="hero-buttons">
-                  <button class="hero-btn">ENQUIRE NOW</button>
+                  <button class="hero-btn" data-bs-toggle="modal" data-bs-target="#enquiryModal">ENQUIRE NOW</button>
                   <div class="hero-btn-divider"></div>
-                  <button class="hero-btn">BOOK NOW</button>
+                  <button class="hero-btn"  data-bs-toggle="modal" data-bs-target="#enquiryModal">BOOK NOW</button>
                 </div>
-                <img src="assets/images/hero/arrow_down.png" alt="Scroll Down" class="hero-arrow">
               </div>
             </div>
           </div>
@@ -755,7 +757,7 @@
 
           <div class="copyright-section">
             <p class="copyright-text">© Copyright 2025 NBCC Aspire Eternia. All Right Reserved.</p>
-            <p class="disclaimer-text">Disclaimer & Privacy Policy | Managed by <a href="https://gtftechnologies.com/"
+            <p class="disclaimer-text"><a href="disclaimer.html" target="_blank" class="gtf-link">Disclaimer & Privacy Policy</a> | Managed by <a href="https://gtftechnologies.com/"
                 target="_blank" class="gtf-link">GTF Technologies</a></p>
           </div>
 
@@ -788,6 +790,40 @@
 
 
     </div>
+  </div>
+
+  <div class="header-buttons">
+    <!-- <button class="btn btn-video">
+      <span>Video</span>
+      <i class="bi bi-play-circle"></i> -->
+    </button>
+    <button class="btn btn-brochure"  data-bs-toggle="modal" data-bs-target="#brochureModal">
+      <span>Brochure</span>
+      <i class="bi bi-download"></i>
+    </button>
+  </div>
+
+  <!-- enquire btn -->
+  <div class="enquire_fixed_btn d-md-none">
+    <div class="side-b whatsapp-button">
+        <a href="https://api.whatsapp.com/send?phone=+91&amp;text=Hello, Looking for Eternia, Greater Noida. Get in touch with me my name is"
+            target="_blank" class="btn">
+            WhatsApp
+        </a>
+    </div>
+
+    <div class="side-b down-load-brochure">
+        <a href="javascript:void(0)" class="btn">
+            Call Now
+        </a>
+    </div>
+
+    <div class="side-b get-in-touch">
+        <a class="btn"  data-bs-toggle="modal" data-bs-target="#enquiryModal">
+            Get In Touch
+        </a>
+    </div>
+
   </div>
 
 
@@ -1017,6 +1053,27 @@
       delay: 0.6
     });
 
+    // Add animation for header buttons - use set to establish initial state then to for animation
+    gsap.set(".header-buttons .btn", {
+      opacity: 0,
+      x: 20
+    });
+    
+    gsap.set(".header-buttons:after", {
+      opacity: 0,
+      x: 10
+    });
+    
+    gsap.to(".header-buttons .btn", {
+      duration: 0.3,
+      opacity: 1,
+      x: 0,
+      stagger: 0.2,
+      ease: "power2.out",
+      delay: 0.9,
+      clearProps: "all" // Clear properties after animation completes
+    });
+
     gsap.from(".sidebar-text", {
       duration: 1,
       opacity: 0,
@@ -1150,6 +1207,20 @@
       y: 50,
       ease: "power2.out",
       delay: 1.5
+    });
+    gsap.from(".hero-content .tagline", {
+      duration: 1,
+      opacity: 0,
+      y: 50,
+      ease: "power2.out",
+      delay: 1.6
+    });
+    gsap.from(".hero-content .sub_tagline", {
+      duration: 1,
+      opacity: 0,
+      y: 50,
+      ease: "power2.out",
+      delay: 1.7
     });
 
     gsap.from(".hero-address", {
