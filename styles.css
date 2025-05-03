@@ -611,11 +611,9 @@ html, body {
     .overview-content {
         position: relative;
         z-index: 3;
-        max-width: 1200px;
         margin: 0 auto;
         text-align: center;
         color: white;
-        padding: 0 20px;
         visibility: hidden; /* For GSAP autoAlpha animation */
 
         .overview-subtitle {
@@ -636,6 +634,10 @@ html, body {
             margin-bottom: 60px;
             margin-top: 50px;
             color: white;
+            max-width: 40%;
+            line-height: 50px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .overview-description {
@@ -869,7 +871,7 @@ html, body {
         }
 
         .icon-cell {
-            padding: 15px 20px;
+            padding: 10px 20px;
             vertical-align: middle;
             border-right: 1px solid rgba(0, 0, 0, 0.4);
 
@@ -885,7 +887,7 @@ html, body {
             font-family: var(--font-primary);
             font-size: 18px;
             color: #000000;
-            padding: 20px 25px;
+            padding: 10px 25px;
             vertical-align: middle;
             line-height: 1.5;
             letter-spacing: 0.5px;
@@ -1353,7 +1355,7 @@ textarea.form-control {
 /* Amenities section */
 .amenities-section {
     position: relative;
-    padding: 120px 0;
+    padding: 100px 0;
     overflow: hidden;
 
     .amenities-bg {
@@ -1665,7 +1667,7 @@ textarea.form-control {
 /* Floor plans section */
 .floor-plans-section {
     position: relative;
-    padding: 120px 0;
+    padding: 100px 0;
     overflow: hidden;
 
     .floor-plans-bg {
@@ -1725,7 +1727,7 @@ textarea.form-control {
     .floor-plans-content {
         position: relative;
         z-index: 3;
-        max-width: 80%;
+        max-width: 60%;
         margin-left: auto;
         margin-right: auto;
     }
@@ -2053,7 +2055,7 @@ textarea.form-control {
 /* Gallery section */
 .gallery-section {
     position: relative;
-    padding: 120px 0;
+    padding: 100px 0;
     overflow: hidden;
 
     .gallery-bg {
@@ -2122,7 +2124,7 @@ textarea.form-control {
         position: relative;
         z-index: 3;
         margin: 0 auto;
-        max-width: 1200px;
+        max-width: 80%;
     }
     
     .gallerySwiper {
@@ -2278,14 +2280,28 @@ textarea.form-control {
 
         .overview-content{
 
+            .overview-title{
+                margin-bottom: 40px;
+                margin-top: 30px;
+            }
+
             .overview-counters{
+                margin-top: 60px;
 
                 .counter-item{
 
                     .counter{
-                        font-size: 40px;
+                        font-size: 34px;
+                    }
+
+                    .counter-label{
+                        font-size: 14px;
                     }
                 }
+            }
+
+            .overview-description{
+                margin-bottom: 40px;
             }
                 
         }
@@ -2300,6 +2316,14 @@ textarea.form-control {
 
         .highlights-title{
             max-width: 60%;
+            margin-bottom: 40px;
+            margin-top: 30px;
+        }
+
+        .highlights_content{
+
+            max-width: 1000px;
+            margin: auto;
         }
 
         .highlights-table{
@@ -2307,6 +2331,7 @@ textarea.form-control {
             .icon-cell{
 
                 padding: 10px 15px;
+                width: 60px;
 
                 img{
                     width: 30px;
@@ -2330,18 +2355,158 @@ textarea.form-control {
 
     .price-list-section{
 
+        .price_content{
+            max-width: 1000px; 
+            margin: auto;
+        }
+
         .price-list-title{
-            margin-bottom: 80px;
+            max-width: 60%;
+            margin-bottom: 60px;
+            margin-top: 30px;
+        }
+
+        .price-box{
+            padding: 30px 20px;
+        }
+
+        .price-type,
+        .price-area,
+        .price-amount{
+            margin-bottom: 20px;
+        }
+
+        .price-btn{
+            margin-top: 10px;
         }
         
     }
 
-    /* end of price list section */
+    /* amenities section */
+
+    .amenities-section{
+
+        .amenities-title{
+
+            max-width: 60%;
+            margin-bottom: 40px;
+            margin-top: 30px;
+        }
+
+        .amenities_content{
+            max-width: 1200px;
+            margin:auto;
+        }
+
+        .amenities-table .text-cell{
+
+            padding: 5px 15px;
+        }
+    }
+
+    /* end of amenities eciton */
+
+    /* location advantage */
+
+    .location-section{
+
+        .location-title{
+
+            max-width: 60%;
+            margin-bottom: 20px;
+            margin-top: 30px;
+        }
+
+        .location-description{
+
+            margin: 0 auto 40px;
+            line-height: initial;
+        }
+
+        .location_content{
+            max-width: 1100px;
+            margin:auto;
+        }
+
+        .location-table .text-cell{
+            padding: 10px 20px;
+        }
+
+        .location-table .icon-cell{
+            padding: 10px 20px;
+        }
+
+        .location-table .icon-cell img{
+            width: 35px;
+        }
+    }
+
+    /* end of location advantage */
+
+    /* floor plan */
+
+    .floor-plans-section{
+
+        .floor-plans-title{
+
+            max-width: 60%;
+            margin-bottom: 40px;
+            margin-top: 30px;
+        }
+
+        .floor-plans-content{
+            max-width: 45%;
+        }
+
+        .swiper_control{
+            margin-top: 60px;
+        }
+    }
+
+    /* end of floor plans */
+
+    /* .gallery-section */
+
+    .gallery-section{
+
+
+        .gallery-title{
+
+            max-width: 60%;
+            margin-bottom: 40px;
+            margin-top: 30px;
+        }
+
+        .gallery-slider-container{
+
+            max-width: 65%;
+        }
+    }
+
+    /* end of galerys ection */
 
     .contact-us-section{
 
+        .contact-us-title{
+            max-width: 60%;
+            margin-bottom: 40px;
+            margin-top: 30px;
+        }
+
         .contact-info-container{
-            padding: 20px 40px;
+            padding: 15px 40px;
+        }
+
+        .contact-form{
+
+            .form-group{
+
+                margin-bottom: 25px;
+            }
+        }
+
+        .contact-form-parent{
+            margin-bottom: 50px;
         }
     }
 
