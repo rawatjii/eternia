@@ -3138,7 +3138,6 @@ textarea.form-control {
     .amenities-section {
         .amenities-title {max-width: 100%;}
     }
-    .px_lg_40{padding:  0 15px;}
     /* Header styles */
     .header {
         position:relative;
@@ -3170,8 +3169,8 @@ textarea.form-control {
         
         .btn-video,
         .btn-brochure {
-            padding: 8px 25px;
-            font-size: 11px;
+            padding: 4px 25px;
+            font-size: 10px;
             display: block;
             font-weight: var(--font-medium);
             position: relative;
@@ -3298,7 +3297,7 @@ textarea.form-control {
         
         .hero-right-col {
             justify-content: flex-start;
-            padding: 40px 30px 0;
+            padding: 40px 40px 0;
         }
     }
     
@@ -3325,7 +3324,7 @@ textarea.form-control {
 
     /* Overview styles */
     .overview-section {
-        padding: 60px 0;
+        padding: 60px 30px;
 
         .overview-flower{
             max-width: 70px;
@@ -3342,6 +3341,8 @@ textarea.form-control {
                 letter-spacing: 3px;
                 margin-bottom: 30px;
                 margin-top: 25px;
+                max-width: 100%;
+                line-height: inherit;
             }
 
             .overview-description {
@@ -3374,7 +3375,7 @@ textarea.form-control {
 
     /* Highlights styles */
     .highlights-section {
-        padding: 60px 0;
+        padding: 60px 20px;
 
         .highlights-flower{
             max-width: 70px;
@@ -3418,7 +3419,7 @@ textarea.form-control {
 
     /* Price list styles */
     .price-list-section {
-        padding: 60px 0;
+        padding: 60px 30px;
 
         .price-list-flower{
             max-width: 70px;
@@ -3481,7 +3482,7 @@ textarea.form-control {
 
     /* Amenities styles */
     .amenities-section {
-        padding: 60px 0;
+        padding: 60px 30px;
 
         .amenities-title {
             font-size: 20px;
@@ -3550,7 +3551,7 @@ textarea.form-control {
 
     /* Location styles */
     .location-section {
-        padding: 60px 0;
+        padding: 60px 30px;
 
         .location-flower{
             max-width: 80px;
@@ -3589,7 +3590,7 @@ textarea.form-control {
 
     /* Floor plans styles */
     .floor-plans-section {
-        padding: 60px 0;
+        padding: 60px 30px;
         
         .floor-plans-subtitle {
             font-size: 12px;
@@ -3603,6 +3604,10 @@ textarea.form-control {
             max-width: 100%;
             margin-top: 25px;
             line-height: inherit;
+        }
+
+        .floor-plans-content{
+            max-width:100%;
         }
 
         .plan-image{
@@ -3619,29 +3624,29 @@ textarea.form-control {
         }
         
         .planSwiper {
-            height: 60px;
+            height: 50px;
         }
         
         .plan-slide {
-            height: 60px;
-            font-size: 14px;
+            height: 50px;
+            font-size: 12px;
         }
         
         .plan-nav-prev,
         .plan-nav-next {
-            width: 30px;
-            height: 30px;
+            width: 24px;
+            height: 24px;
             margin: 0 0;
             
             &:after {
-                font-size: 14px;
+                font-size: 10px;
             }
         }
     }
 
     /* Contact Us Section Responsive */
     .contact-us-section {
-        padding: 50px 0;
+        padding: 50px 30px;
         
         .contact-us-flower {
             top: 50px;
@@ -3728,7 +3733,7 @@ textarea.form-control {
 
     /* Footer Section Responsive */
     .footer-section {
-        padding: 50px 0;
+        padding: 50px 20px;
         
         .footer-flower {
             top: 40px;
@@ -3740,7 +3745,7 @@ textarea.form-control {
             letter-spacing: 3px;
             margin-bottom: 40px;
             max-width: 100%;
-            margin-top: 25px;
+            margin-top: 0;
             line-height: inherit;
         }
         
@@ -3804,7 +3809,15 @@ textarea.form-control {
     }
 
     .gallery-section {
-        padding: 60px 0;
+        padding: 60px 30px;
+
+        .gallerySwiper{
+            padding-bottom: 0;
+        }
+
+        .gallery-slider-container{
+            max-width: 100%;
+        }
         
         .gallery-subtitle {
             font-size: 12px;
@@ -3842,8 +3855,12 @@ textarea.form-control {
         
         .gallery-nav-prev,
         .gallery-nav-next {
-            width: 40px;
-            height: 40px;
+            width: 30px;
+            height: 30px;
+
+            &:after{
+                font-size:10px;
+            }
         }
     }
 
@@ -3875,7 +3892,7 @@ textarea.form-control {
         transform: Rotate(-90deg) translateY(-50%);
         transform-origin: top right;
         gap: 0;
-        right: 18px;
+        right: 16px;
         box-shadow: 0 0 7px rgba(0 0 0 / 15%);
 
         &::after {
