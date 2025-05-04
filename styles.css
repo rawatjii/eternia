@@ -233,6 +233,12 @@ html, body {
     overflow: hidden;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 
+    &.gsap-header{
+        position: fixed;
+        top: 0;
+        background: #fff;
+    }
+
     .row{
         align-items: start;
     }
@@ -3144,6 +3150,7 @@ textarea.form-control {
         left: 0;
         padding: 15px;
         width:100%;
+        z-index: 99;
 
         .header-buttons{
             display:none;
@@ -3876,6 +3883,7 @@ textarea.form-control {
     
     .main-content {
         padding-left: 0;
+        padding-top: 65px;
     }
     
     .mobile-menu-toggle {

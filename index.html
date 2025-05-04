@@ -56,10 +56,6 @@
     </ul>
   </div>
 
-  <div id="smooth-wrapper">
-    <div id="smooth-content">
-      <!-- Main Content -->
-      <div class="main-content">
         <!-- Header -->
         <header class="header">
           <div class="container-fluid px-0">
@@ -97,6 +93,11 @@
             </div>
           </div>
         </header>
+        
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <!-- Main Content -->
+      <div class="main-content">
 
         <!-- Hero Section -->
         <section class="hero-section" id="hero-section">
@@ -1048,74 +1049,90 @@
       smoothTouch: 0.1, // much shorter smoothing time on touch devices
     });
 
-    // Set up fixed header with proper GSAP configuration
-    (() => {
-      const header = document.querySelector('.header');
-      const headerHeight = header.offsetHeight;
-      const isMobile = window.innerWidth <= 768;
-      
-      // Add a special class to the header for GSAP manipulation
-      header.classList.add('gsap-header');
-      
-      // Create a div to maintain the header's space in layout
-      const headerPlaceholder = document.createElement('div');
-      headerPlaceholder.style.height = `${headerHeight}px`;
-      headerPlaceholder.style.display = 'none';
-      header.parentNode.insertBefore(headerPlaceholder, header);
-      
-      // ScrollTrigger for tracking scroll position
-      ScrollTrigger.create({
-        start: 0,
-        end: 'max',
-        onUpdate: (self) => {
-          // Only add pin-active class after scrolling past 100px
-          if (self.scroll() >= 100) {
-            header.classList.add('pin-active');
-            // headerPlaceholder.style.display = 'block';
-            
-            // Switch to dark logos
-            // if(!isMobile){
-            //   document.querySelectorAll('.light-logo').forEach(logo => {
-            //   logo.classList.add('d-none');
-            //   logo.classList.remove('d-md-block');
-            // });
-            // document.querySelectorAll('.dark-logo').forEach(logo => {
-            //   logo.classList.remove('d-none');
-            //   logo.classList.add('d-md-block');
-            // });
-            // }
-            
-          } else {
-            header.classList.remove('pin-active');
-            // headerPlaceholder.style.display = 'none';
-            
-            // Switch back to light logos
-            // if(!isMobile){
-            //   document.querySelectorAll('.light-logo').forEach(logo => {
-            //   logo.classList.remove('d-none');
-            //   logo.classList.add('d-md-block');
-            // });
-            // document.querySelectorAll('.dark-logo').forEach(logo => {
-            //   logo.classList.add('d-none');
-            //   logo.classList.remove('d-md-block');
-            // });
-            // }
-            
-          }
+    // Add gsap-header class to header when scrolling past 100px
+    ScrollTrigger.create({
+      start: 0,
+      end: 'max',
+      onUpdate: (self) => {
+        const header = document.querySelector('.header');
+        if (self.scroll() >= 200) {
+          header.classList.add('gsap-header');
+          header.classList.add('pin-active');
+        } else {
+          header.classList.remove('gsap-header');
+          header.classList.remove('pin-active');
         }
-      });
+      }
+    });
+
+    // Set up fixed header with proper GSAP configuration
+    // (() => {
+    //   const header = document.querySelector('.header');
+    //   const headerHeight = header.offsetHeight;
+    //   const isMobile = window.innerWidth <= 768;
       
-      // Pin the header with ScrollTrigger
-      ScrollTrigger.create({
-        trigger: header,
-        start: "top top",
-        endTrigger: document.body,
-        end: "bottom top",
-        pin: true,
-        pinReparent: true,
-        pinSpacing: false,
-      });
-    })();
+    //   // Add a special class to the header for GSAP manipulation
+    //   header.classList.add('gsap-header');
+      
+    //   // Create a div to maintain the header's space in layout
+    //   const headerPlaceholder = document.createElement('div');
+    //   headerPlaceholder.style.height = `${headerHeight}px`;
+    //   headerPlaceholder.style.display = 'none';
+    //   header.parentNode.insertBefore(headerPlaceholder, header);
+      
+    //   // ScrollTrigger for tracking scroll position
+    //   ScrollTrigger.create({
+    //     start: 0,
+    //     end: 'max',
+    //     onUpdate: (self) => {
+    //       // Only add pin-active class after scrolling past 100px
+    //       if (self.scroll() >= 100) {
+    //         header.classList.add('pin-active');
+    //         // headerPlaceholder.style.display = 'block';
+            
+    //         // Switch to dark logos
+    //         // if(!isMobile){
+    //         //   document.querySelectorAll('.light-logo').forEach(logo => {
+    //         //   logo.classList.add('d-none');
+    //         //   logo.classList.remove('d-md-block');
+    //         // });
+    //         // document.querySelectorAll('.dark-logo').forEach(logo => {
+    //         //   logo.classList.remove('d-none');
+    //         //   logo.classList.add('d-md-block');
+    //         // });
+    //         // }
+            
+    //       } else {
+    //         header.classList.remove('pin-active');
+    //         // headerPlaceholder.style.display = 'none';
+            
+    //         // Switch back to light logos
+    //         // if(!isMobile){
+    //         //   document.querySelectorAll('.light-logo').forEach(logo => {
+    //         //   logo.classList.remove('d-none');
+    //         //   logo.classList.add('d-md-block');
+    //         // });
+    //         // document.querySelectorAll('.dark-logo').forEach(logo => {
+    //         //   logo.classList.add('d-none');
+    //         //   logo.classList.remove('d-md-block');
+    //         // });
+    //         // }
+            
+    //       }
+    //     }
+    //   });
+      
+    //   // Pin the header with ScrollTrigger
+    //   ScrollTrigger.create({
+    //     trigger: header,
+    //     start: "top top",
+    //     endTrigger: document.body,
+    //     end: "bottom top",
+    //     pin: true,
+    //     pinReparent: true,
+    //     pinSpacing: false,
+    //   });
+    // })();
 
     // handle navigation links
 
@@ -1266,32 +1283,32 @@
     });
 
     // Counter animation
-    let counted = false;
-    ScrollTrigger.create({
-      trigger: ".overview-counters",
-      start: "top 80%",
-      onEnter: () => {
-        gsap.set(".overview-content, .counter-item", { visibility: "visible" });
+    // let counted = false;
+    // ScrollTrigger.create({
+    //   trigger: ".overview-counters",
+    //   start: "top 80%",
+    //   onEnter: () => {
+    //     gsap.set(".overview-content, .counter-item", { visibility: "visible" });
 
-        if (!counted) {
-          counted = true;
-          document.querySelectorAll('.counter').forEach(counter => {
-            const target = parseInt(counter.getAttribute('data-target'));
-            const duration = 2; // seconds
-            const start = { value: 0 };
+    //     if (!counted) {
+    //       counted = true;
+    //       document.querySelectorAll('.counter').forEach(counter => {
+    //         const target = parseInt(counter.getAttribute('data-target'));
+    //         const duration = 2; // seconds
+    //         const start = { value: 0 };
 
-            gsap.to(start, {
-              value: target,
-              duration: duration,
-              ease: "power2.out",
-              onUpdate: () => {
-                counter.textContent = Math.round(start.value);
-              }
-            });
-          });
-        }
-      }
-    });
+    //         gsap.to(start, {
+    //           value: target,
+    //           duration: duration,
+    //           ease: "power2.out",
+    //           onUpdate: () => {
+    //             counter.textContent = Math.round(start.value);
+    //           }
+    //         });
+    //       });
+    //     }
+    //   }
+    // });
 
     // Hero content animations
     gsap.from(".hero-left-image", {
