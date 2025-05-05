@@ -250,9 +250,13 @@ html, body {
         padding-top: 40px;
 
         .header-logo {
-            height: 60px;
+            height: 55px;
             width: auto;
             object-fit: contain;
+        }
+
+        .gvr_logo{
+            height:50px;
         }
 
         .dark-logo{
@@ -282,20 +286,12 @@ html, body {
 
             .header-logo {
 
-                height: 45px;
+                height: 30px;
             }
 
-            .header-divider{
+            /* .header-divider{
                 background-color:#000;
-            }
-        }
-
-        .dark-logo{
-            display: block;
-        }
-
-        .light-logo{
-            display: none;
+            } */
         }
     }
 
@@ -3142,9 +3138,13 @@ html, body {
             .dark-logo{
                 display:block;
             }
+
+            .gvr_logo{
+                height: 28px;
+            }
         }
 
-        &.gsap-header.pin-active{
+        /* &.gsap-header.pin-active{
             ._logo{
 
                 .header-logo{
@@ -3152,7 +3152,7 @@ html, body {
                 }
             }
 
-        }
+        } */
     }
     .overview-section {
         .overview-content {
@@ -3184,7 +3184,7 @@ html, body {
             padding-top: 0px;
 
             .header-divider{
-                background-color:#000;
+                background-color:rgb(0 0 0 / 30%);
             }
         }
     }
