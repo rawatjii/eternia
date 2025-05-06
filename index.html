@@ -843,7 +843,7 @@
               <div class="col-lg-10">
                 <div class="contact-info-container">
                   <div class="row contact-info-row">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                       <div class="contact-info-item">
                         <div class="contact-info-icon">
                           <i class="bi bi-telephone-fill"></i>
@@ -851,7 +851,7 @@
                         <div class="contact-info-text">Call: +91-7777-079-770</div>
                       </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                       <div class="contact-info-item">
                         <div class="contact-info-icon">
                           <i class="bi bi-geo-alt-fill"></i>
@@ -859,14 +859,14 @@
                         <div class="contact-info-text">Visit our Experience Centre</div>
                       </div>
                     </div>
-                    <div class="col-md-4">
+                    <!-- <div class="col-md-4">
                       <div class="contact-info-item">
                         <div class="contact-info-icon">
                           <i class="bi bi-envelope-fill"></i>
                         </div>
                         <div class="contact-info-text">Email: sales@eterniahomes.com</div>
                       </div>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
@@ -1005,31 +1005,31 @@
             <i class="bi bi-x"></i>
           </button>
           <h3 class="modal-title">Have Questions? Ask Away!</h3>
-          <form class="enquiry-form">
+          <div class="enquiry-form">
             <div class="row">
               <div class="col-md-4 mb-3">
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Name" required>
+                  <input type="text" class="form-control" placeholder="Name" id="qSenderName" name="name" required>
                 </div>
               </div>
               <div class="col-md-4 mb-3">
                 <div class="form-group">
-                  <input type="email" class="form-control" placeholder="Mail ID" required>
+                  <input type="email" class="form-control" placeholder="Mail ID" id="qEmailID" name="email" required>
                 </div>
               </div>
               <div class="col-md-4 mb-3">
                 <div class="form-group">
-                  <input type="tel" class="form-control" placeholder="Phone Number" required>
+                  <input type="tel" class="form-control" placeholder="Phone Number" id="qMobileNo" name="number" required>
                 </div>
               </div>
             </div>
             <div class="form-group mb-4">
-              <textarea class="form-control" rows="4" placeholder="Message" required></textarea>
+              <textarea class="form-control" rows="4" placeholder="Message" name="message" id="qMessage" required></textarea>
             </div>
             <div class="text-center">
-              <button type="submit" class="submit-btn">Submit Now</button>
+              <button type="submit" class="submit-btn" id="SubmitQuery">Submit Now</button>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
@@ -1044,31 +1044,31 @@
             <i class="bi bi-x"></i>
           </button>
           <h3 class="modal-title">Download Brochure</h3>
-          <form class="enquiry-form">
+          <div class="enquiry-form">
             <div class="row">
-              <div class="col-md-4 mb-md-3">
+              <div class="col-md-4 mb-3">
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Name" required>
+                  <input type="text" class="form-control" placeholder="Name" id="qSenderName1" name="name" required>
                 </div>
               </div>
-              <div class="col-md-4 mb-md-3">
+              <div class="col-md-4 mb-3">
                 <div class="form-group">
-                  <input type="email" class="form-control" placeholder="Mail ID" required>
+                  <input type="email" class="form-control" placeholder="Mail ID" id="qEmailID1" name="email" required>
                 </div>
               </div>
-              <div class="col-md-4 mb-md-3">
+              <div class="col-md-4 mb-3">
                 <div class="form-group">
-                  <input type="tel" class="form-control" placeholder="Phone Number" required>
+                  <input type="tel" class="form-control" placeholder="Phone Number" id="qMobileNo1" name="number" required>
                 </div>
               </div>
             </div>
             <div class="form-group mb-4">
-              <textarea class="form-control" rows="2" placeholder="Message" required></textarea>
+              <textarea class="form-control" rows="4" placeholder="Message" name="message" id="qMessage1" required></textarea>
             </div>
             <div class="text-center">
-              <button type="submit" class="submit-btn">Submit Now</button>
+              <button type="submit" class="submit-btn" id="SubmitQuery1">Submit Now</button>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
@@ -1084,7 +1084,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="js/ScrollSmoother.min.js"></script>
-  <script src="js/queryform.min.ssl.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
   <script>
     // Register GSAP plugins
@@ -2047,7 +2046,70 @@
         }
       });
     });
+    
+    
   </script>
+
+<script type="text/javascript" language="javascript">
+  var versionUpdate = (new Date()).getTime();
+  var script = document.createElement("script");
+  script.type = "text/javascript";
+  script.src = "https://api2.gtftech.com/scripts/queryform.min.ssl.js?v=" + versionUpdate;
+  document.body.appendChild(script);
+</script>
+
+<script>
+  var AgentInfo = {
+          "vAgentID": "4894",
+          "vProject": "Eternia Greater Noida",
+          "vURL": "hat.openai.com/c/92036649-0f4e-4ae9-8e4e-0fa053ecf1f0",
+          "thankspageurl": "hat.openai.com/c/92036649-0f4e-4ae9-8e4e-0fa053ecf1f0thanks.htm",
+      };
+
+      //Needs to be duplicate in the case of multiple forms on the same page
+      //--------------------------------------------------------------------------------------//
+      $('#preferedtime').hide();
+
+      $("#SubmitQuery").click(function () {
+
+        var AgentInfo = {
+            "vAgentID": "4894",
+            "vProject": "Eternia Greater Noida",
+            "vURL": "https://rawatjii.github.io/eternia/",
+            "thankspageurl": "https://rawatjii.github.io/eternia/thanks.htm",
+        };
+
+        var FormInfo = {
+            "SenderControlID": "qSenderName",
+            "SenderControlMobileID": "qMobileNo",
+            "SenderControlEmailID": "qEmailID",
+            "SenderControlMsgID": "qMessage"
+        };
+
+        SubmitQueryData(AgentInfo, FormInfo);
+      });
+
+      $("#SubmitQuery1").click(function () {
+
+        var AgentInfo = {
+            "vAgentID": "4894",
+            "vProject": "Eternia Greater Noida",
+            "vURL": "https://rawatjii.github.io/eternia/",
+            "thankspageurl": "https://rawatjii.github.io/eternia/thanks.htm",
+        };
+
+        var FormInfo = {
+            "SenderControlID": "qSenderName1",
+            "SenderControlMobileID": "qMobileNo1",
+            "SenderControlEmailID": "qEmailID1",
+            "SenderControlMsgID": "qMessage1"
+        };
+
+        SubmitQueryData(AgentInfo, FormInfo);
+      });
+</script>
+
+
 </body>
 
 </html>
