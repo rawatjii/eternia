@@ -43,6 +43,13 @@
     <button class="sidebar-close-btn d-md-none" id="sidebarCloseBtn">
       <i class="bi bi-x"></i>
     </button>
+    <div class="sidebar-builder-logo">
+      <!-- <img src="assets/images/logo/great_value.png" alt="Great Value" class="header-logo gvr_logo main_logo light-logo d-none d-md-block"> -->
+      <img src="assets/images/logo/great_value_dark.webp" alt="Great Value" class="header-logo gvr_logo main_logo dark-logo" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+      <div class="header-divider" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;"></div>
+      <!-- <img src="assets/images/logo/yatharth.png" alt="Yatharth" class="header-logo yatharth_main_logo light-logo d-none"> -->
+      <img src="assets/images/logo/yatharth_dark.webp" alt="Yatharth" class="header-logo yatharth_main_logo dark-logo" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+    </div>
     <ul class="list-unstyled">
       <li><a href="#hero-section" class="text-dark nav-link">HOME</a></li>
       <li><a href="#overview-section" class="text-dark nav-link">ABOUT US</a></li>
@@ -685,28 +692,16 @@
               <div class="swiper-container">
                 <div class="swiper planSwiper">
                   <div class="swiper-wrapper">
-                    <div class="swiper-slide" data-plan="master">
+                    <div class="swiper-slide" data-plan="master" role="button" aria-label="Select 3 BHK Plan">
                       <div class="plan-slide">Master Plan</div>
                     </div>
-                    <div class="swiper-slide" data-plan="3bhk">
+                    <div class="swiper-slide" data-plan="3bhk" role="button" aria-label="Select 3 BHK Plan">
                       <div class="plan-slide">3 BHK Plan</div>
                     </div>
-                    <div class="swiper-slide" data-plan="3bhk+study">
+                    <div class="swiper-slide" data-plan="3bhk+study" role="button" aria-label="Select 3 BHK Plan">
                       <div class="plan-slide">3 BHK + Study</div>
                     </div>
-                    <div class="swiper-slide" data-plan="4bhk+study">
-                      <div class="plan-slide">4 BHK + Study</div>
-                    </div>
-                    <div class="swiper-slide" data-plan="master">
-                      <div class="plan-slide">Master Plan</div>
-                    </div>
-                    <div class="swiper-slide" data-plan="3bhk">
-                      <div class="plan-slide">3 BHK Plan</div>
-                    </div>
-                    <div class="swiper-slide" data-plan="3bhk+study">
-                      <div class="plan-slide">3 BHK + Study</div>
-                    </div>
-                    <div class="swiper-slide" data-plan="4bhk+study">
+                    <div class="swiper-slide" data-plan="4bhk+study" role="button" aria-label="Select 4bhk study Plan">
                       <div class="plan-slide">4 BHK + Study</div>
                     </div>
                   </div>
@@ -995,6 +990,11 @@
 
   </div>
 
+  <div class="whatsapp-section d-none d-md-block zoom-in-zoom-out">
+    <a href="https://api.whatsapp.com/send?phone=+91 &amp;text=Hello, Looking for Eternia, Greater Noida (W) Get in touch with me my name is" target="_blank"> 
+      <img class="img-fluid" src="assets/images/whatsapp.png" alt=""> 
+    </a>
+  </div>
 
   <!-- Form Modal -->
   <div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true">
@@ -1922,6 +1922,7 @@
           slideChange: function () {
             const activeSlide = this.slides[this.activeIndex];
             const planType = activeSlide.getAttribute('data-plan');
+           
 
             // Hide all images with fade
             $('.plan-image').removeClass('active');
@@ -1945,6 +1946,28 @@
           }
         }
       });
+
+      // document.querySelectorAll('.swiper-slide').forEach(slide => {
+      //   slide.addEventListener('click', () => {
+      //     const selectedPlan = slide.dataset.plan;
+
+      //     document.querySelectorAll('.plan-image').forEach(image => {
+      //       if (image.dataset.plan === selectedPlan) {
+      //         image.classList.add('active');
+      //       } else {
+      //         image.classList.remove('active');
+      //       }
+      //     });
+      //   });
+      // });
+        document.querySelectorAll('.planSwiper .swiper-slide').forEach((item, index) => {
+            $(item).click(function () {
+                  const slideIndex = parseInt($(this).attr("data-swiper-slide-index"), 10);
+                  planSwiper.slideToLoop(slideIndex, 500); // 500ms transition
+            });
+        });
+
+      
 
       // Initialize Gallery Swiper
       const gallerySwiper = new Swiper('.gallerySwiper', {
@@ -1978,19 +2001,19 @@
         }
       });
 
-      // Add opacity styling for non-active slides
-      // gallerySwiper.on('slideChangeTransitionStart', function () {
-      //   const slides = document.querySelectorAll('.gallerySwiper .swiper-slide');
-      //   slides.forEach(slide => {
-      //     if (!slide.classList.contains('swiper-slide-active')) {
-      //       slide.style.opacity = '0.5';
-      //     } else {
-      //       slide.style.opacity = '1';
-      //     }
-      //   });
-      // });
+        // Add opacity styling for non-active slides
+        // gallerySwiper.on('slideChangeTransitionStart', function () {
+        //   const slides = document.querySelectorAll('.gallerySwiper .swiper-slide');
+        //   slides.forEach(slide => {
+        //     if (!slide.classList.contains('swiper-slide-active')) {
+        //       slide.style.opacity = '0.5';
+        //     } else {
+        //       slide.style.opacity = '1';
+        //     }
+        //   });
+        // });
 
-      // Initialize Amenities Swiper
+        // Initialize Amenities Swiper
       const amenitiesSwiper = new Swiper('.amenitiesSwiper', {
         slidesPerView: 1,
         spaceBetween: 30,
