@@ -89,84 +89,79 @@ html, body {
     top: 0;
     bottom: 0;
     width: 100px;
-    background-color: #ffffff;
+    background-color: #fff;
     z-index: 9999;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 50px 0;
-    box-shadow: 2px 0 4px rgba(0,0,0,.1);
+    box-shadow: 2px 0 4px rgba(0, 0, 0, .1);
     font-family: var(--font-primary);
-
-    .sidebar-logo {
-        width: 80px;
-        height: auto;
-    }
-
-    .center {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: auto 0;
-        flex: 1;
-        justify-content: center;
-
-        .sidebar-e-logo {
-            width: 34px;
-            height: auto;
-            margin-bottom: 30px;
-        }
-
-        .hamburger-menu {
-            width: 42px;
-            height: 20px;
-            position: relative;
-            cursor: pointer;
-
-            span {
-                display: block;
-                position: absolute;
-                height: 2px;
-                width: 100%;
-                background: #000000;
-                border-radius: 3px;
-                transition: all 0.3s ease;
-
-                &:nth-child(1) { top: 0; }
-                &:nth-child(2) { top: 10px; }
-                &:nth-child(3) { top: 20px; }
-            }
-
-            &.active {
-                span {
-                    &:nth-child(1) {
-                        transform: rotate(45deg);
-                        top: 8px;
-                    }
-                    &:nth-child(2) {
-                        opacity: 0;
-                    }
-                    &:nth-child(3) {
-                        transform: rotate(-45deg);
-                        top: 8px;
-                    }
-                }
-            }
-        }
-    }
-
-    .sidebar-text {
-        margin-top: auto;
-        writing-mode: vertical-rl;
-        transform: rotate(180deg);
-        color: rgb(0 0 0 / 70%);
-        font-size: 26px;
-        font-weight: var(--font-light);
-        letter-spacing: 4px;
-        font-family: var(--font-tertiary);
-        text-transform: uppercase;
-    }
 }
+.sidebar .sidebar-logo {
+    width: 80px;
+    height: auto;
+}
+.sidebar .center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto 0;
+    flex: 1;
+    justify-content: center;
+}
+.sidebar .center .sidebar-e-logo {
+    width: 34px;
+    height: auto;
+    margin-bottom: 30px;
+}
+.sidebar .center .hamburger-menu {
+    width: 42px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+}
+.sidebar .center .hamburger-menu span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: #000;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+.sidebar .center .hamburger-menu span:nth-child(1) {
+    top: 0;
+}
+.sidebar .center .hamburger-menu span:nth-child(2) {
+    top: 10px;
+}
+.sidebar .center .hamburger-menu span:nth-child(3) {
+    top: 20px;
+}
+.sidebar .center .hamburger-menu.active span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 8px;
+}
+.sidebar .center .hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+.sidebar .center .hamburger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 8px;
+}
+.sidebar .sidebar-text {
+    margin-top: auto;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    color: #000;
+    font-size: 26px;
+    font-weight: var(--font-light);
+    letter-spacing: 4px;
+    font-family: var(--font-tertiary);
+    text-transform: uppercase;
+}
+
 
 .sidebar-menu {
     position: fixed;
@@ -727,26 +722,29 @@ html, body {
 .hero-buttons {
     display: flex;
     align-items: center;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     right: 0;
     z-index: 3;
+    box-shadow: 0 -1px 10px rgba(0 0 0 / 10%);
 }
 
 .hero-btn {
-  width: 200px;
-  padding: 25px 0;
+  width: 170px;
+  padding: 15px 0;
   background-color: white;
   color: black;
   border: none;
   font-family: var(--font-primary);
   font-weight: var(--font-semibold);
-  font-size: 14px;
+  font-size: 13px;
   cursor: pointer;
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 1px;
   position: relative;
+  text-align: center;
+  text-decoration: none;
 }
 
 .hero-btn:hover {
@@ -756,9 +754,9 @@ html, body {
 .hero-btn-divider {
     position: absolute;
     width: 1px;
-    height: 40px;
+    height: 20px;
     background-color: black;
-    left: 200px;
+    left: 170px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 1;
@@ -983,7 +981,7 @@ html, body {
 .price-list-section .price-type {
     font-family: var(--font-primary);
     font-weight: var(--font-medium);
-    font-size: 24px;
+    font-size: 20px;
     color: white;
     margin-bottom: 30px;
     letter-spacing: 3px;
@@ -992,7 +990,7 @@ html, body {
 .price-list-section .price-area {
     font-family: var(--font-primary);
     font-weight: var(--font-medium);
-    font-size: 24px;
+    font-size: 20px;
     color: white;
     margin-bottom: 30px;
     letter-spacing: 3px;
@@ -1002,7 +1000,7 @@ html, body {
 .price-list-section .price-amount {
     font-family: var(--font-primary);
     font-weight: var(--font-medium);
-    font-size: 24px;
+    font-size: 20px;
     color: white;
     margin-bottom: 30px;
     letter-spacing: 3px;
@@ -1119,11 +1117,11 @@ html, body {
 
 .amenities-section .slide-subtitle {
     font-family: var(--font-secondary);
-    font-size: 20px;
+    font-size: 14px;
     color: white;
     text-transform: uppercase;
     letter-spacing: 2px;
-    max-width: 60%;
+    max-width: 80%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -1343,12 +1341,14 @@ html, body {
     color: #000000;
 }
 
-.contact-us-section .contact-info-text {
+.contact-us-section .contact-info-text,
+.contact-us-section .contact-info-text a {
     font-family: var(--font-primary);
     font-size: 16px;
     color: #000000;
     font-weight: var(--font-medium);
     letter-spacing: 1px;
+    text-decoration: none;
 }
 
 /* Contact Us Section Animations */
@@ -1384,125 +1384,117 @@ html, body {
     transition-delay: 0.5s;
 }
 
-.modal{
-
-
-    .modal-dialog {
-        max-width: 600px;
-    }
-    
-    /* Modal section */
-    .modal-dialog {
-        max-width: 800px;
-    }
-    
-    .modal-content {
-      background: #fff;
-      border: none;
-      border-radius: 10px;
-      padding: 40px;
-    }
-    
-    .modal-inner {
-        background: white;
-        position: relative;
-        border: 1px solid black;
-        border-radius: 10px;
-        padding: 60px;
-        padding-top: 20px;
-    }
-    
-    .modal-close {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        width: 40px;
-        height: 40px;
-        border: 1px solid black;
-        border-radius: 50%;
-        background: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-    
-    .modal-close:hover {
-        background: #f5f5f5;
-    }
-    
-    .modal-title {
-        font-family: var(--font-secondary);
-        font-size: 28px;
-        text-align: center;
-        margin-bottom: 60px;
-        color: black;
-        padding-top: 0px;
-    }
-    
-    .form-group {
-        margin-bottom: 20px;
-    }
-    
-    .form-group label {
-        display: block;
-        font-family: var(--font-primary);
-        font-size: 14px;
-        color: black;
-        margin-bottom: 8px;
-    }
-    
-    .form-control {
-        width: 100%;
-        border: none;
-        border-bottom: 1px solid black;
-        border-radius: 0;
-        padding: 12px 0;
-        font-family: var(--font-primary);
-        font-size: 16px;
-        color: black;
-        background: transparent;
-
-        
-    }
-
-    .form-control::placeholder{
-        font-size: 12px;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        color: rgba(0, 0, 0);
-    }
-    
-    .form-control:focus {
-        outline: none;
-        box-shadow: none;
-        border-color: black;
-    }
-    
-    textarea.form-control {
-        resize: none;
-    }
-    
-    .submit-btn {
-        background: transparent;
-            border: 1px solid black;
-            color: black;
-            font-family: var(--font-primary);
-            font-size: 14px;
-            padding: 10px 40px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-top: 20px;
-    }
-    
-    .submit-btn:hover {
-        background: black;
-        color: white;
-    }
+.modal {
+	/* Modal section */
 }
+ .modal .modal-dialog {
+	 max-width: 600px;
+}
+ .modal .modal-dialog {
+	 max-width: 800px;
+}
+ .modal .modal-content {
+	 background: #fff;
+	 border: none;
+	 border-radius: 10px;
+	 padding: 40px;
+}
+ .modal .modal-inner {
+	 background: white;
+	 position: relative;
+	 border: 1px solid black;
+	 border-radius: 10px;
+	 padding: 60px;
+	 padding-top: 20px;
+}
+ .modal .modal-close {
+	 position: absolute;
+	 top: 20px;
+	 right: 20px;
+	 width: 40px;
+	 height: 40px;
+	 border: 1px solid black;
+	 border-radius: 50%;
+	 background: white;
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+	 cursor: pointer;
+	 transition: all 0.3s ease;
+}
+ .modal .modal-close:hover {
+	 background: #f5f5f5;
+}
+
+.modal .sidebar-builder-logo{
+    margin-bottom:30px;
+}
+
+.modal .sidebar-builder-logo img{
+    height:40px;
+}
+
+ .modal .modal-title {
+	 font-family: var(--font-secondary);
+	 font-size: 28px;
+	 text-align: center;
+	 margin-bottom: 60px;
+	 color: black;
+	 padding-top: 0px;
+}
+ .modal .form-group {
+	 margin-bottom: 20px;
+}
+ .modal .form-group label {
+	 display: block;
+	 font-family: var(--font-primary);
+	 font-size: 14px;
+	 color: black;
+	 margin-bottom: 8px;
+}
+ .modal .form-control {
+	 width: 100%;
+	 border: none;
+	 border-bottom: 1px solid black;
+	 border-radius: 0;
+	 padding: 12px 0;
+	 font-family: var(--font-primary);
+	 font-size: 16px;
+	 color: black;
+	 background: transparent;
+}
+ .modal .form-control::placeholder {
+	 font-size: 12px;
+	 letter-spacing: 3px;
+	 text-transform: uppercase;
+	 color: rgba(0, 0, 0, );
+}
+ .modal .form-control:focus {
+	 outline: none;
+	 box-shadow: none;
+	 border-color: black;
+}
+ .modal textarea.form-control {
+	 resize: none;
+}
+ .modal .submit-btn {
+	 background: transparent;
+	 border: 1px solid black;
+	 color: black;
+	 font-family: var(--font-primary);
+	 font-size: 14px;
+	 padding: 10px 40px;
+	 cursor: pointer;
+	 transition: all 0.3s ease;
+	 text-transform: uppercase;
+	 letter-spacing: 2px;
+	 margin-top: 20px;
+}
+ .modal .submit-btn:hover {
+	 background: black;
+	 color: white;
+}
+ 
 
 
 .swiper-button-prev,
@@ -2199,6 +2191,16 @@ html, body {
 
 /* Responsive Styles - Combined at bottom */
 @media (max-width: 1500px) {
+    .hero-btn{
+        font-size: 12px;
+        width: 160px;
+
+    }
+
+    .hero-btn-divider{
+        left:160px;
+    }
+
     .sidebar {
         padding: 20px 0;
     }
@@ -2341,6 +2343,10 @@ html, body {
         max-width: 60%;
         margin-bottom: 40px;
         margin-top: 30px;
+    }
+
+    .amenities-section .slide-subtitle{
+        font-size: 12px;
     }
 
     .amenities-section .amenities_content {
@@ -2813,7 +2819,8 @@ html, body {
         margin-right: 0;
     }
 
-    .contact-us-section .contact-info-text {
+    .contact-us-section .contact-info-text,
+    .contact-us-section .contact-info-text a {
         font-size: 14px;
         letter-spacing: 0.5px;
         display: block;
@@ -3271,7 +3278,7 @@ html, body {
         font-size: 18px;
    }
     .amenities-section .slide-subtitle {
-        font-size: 12px;
+        font-size: 10px;
         max-width: 100%;
    }
     .amenities-section .swiper-button-prev, .amenities-section .swiper-button-next {
@@ -3691,7 +3698,14 @@ html, body {
     .enquire_fixed_btn p {
         margin: 0;
    }
+
+   .modal .sidebar-builder-logo{
+    margin-bottom:15px;
+   }
     
+   .modal .sidebar-builder-logo img{
+    height:25px;
+   }
 
 }
 
