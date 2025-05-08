@@ -1431,7 +1431,7 @@ html, body {
 }
 
 .modal .sidebar-builder-logo img{
-    height:40px;
+    height:30px;
 }
 
  .modal .modal-title {
@@ -3705,6 +3705,11 @@ html, body {
     
    .modal .sidebar-builder-logo img{
     height:25px;
+   }
+
+   .location-section .location-table .text-cell .list{ 
+    display:flex;
+    align-items: center;
    }
 
 }
